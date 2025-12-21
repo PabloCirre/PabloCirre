@@ -44,6 +44,7 @@ require_once __DIR__ . '/config.php';
 
     <!-- Theme Initialization -->
     <script>
+        const BASE_URL = '<?php echo BASE_URL; ?>';
         const currentTheme = localStorage.getItem('theme') || 'dark';
         document.documentElement.setAttribute('data-theme', currentTheme);
     </script>
@@ -81,7 +82,8 @@ require_once __DIR__ . '/config.php';
         <!-- Header Navigation -->
         <header class="main-header">
             <div class="logo">
-                <a href="<?php echo BASE_URL; ?>/" style="text-decoration: none; color: inherit;">Pablo Cirre</a>
+                <a href="<?php echo BASE_URL; ?>/" style="text-decoration: none; color: inherit;">Pablo Cirre <span
+                        style="font-size: 0.5em; opacity: 0.5;">v.101</span></a>
             </div>
             <nav>
                 <div class="nav-item-dropdown">

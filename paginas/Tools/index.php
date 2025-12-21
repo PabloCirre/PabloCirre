@@ -45,7 +45,7 @@ include '../../Components/header.php';
                 <span class="pm-value">4.9</span>
             </div>
         </div>
-        <a href="/PabloCirre/paginas/Tools/KaijuEmailVerifier/" class="project-link">Acceder →</a>
+        <a href="<?php echo BASE_URL; ?>/paginas/Tools/KaijuEmailVerifier/" class="project-link">Acceder →</a>
     </div>
 
 </div>
@@ -101,7 +101,8 @@ include '../../Components/header.php';
     <p style="color: #666; margin-bottom: 30px;">Desarrollamos soluciones a medida para tu negocio.</p>
 
     <div style="max-width: 500px; margin: 0 auto;">
-        <a href="/PabloCirre/paginas/Services/" class="btn-primary" style="margin-right: 10px;">Ver Servicios</a>
-        <a href="/PabloCirre/paginas/About-Me/" class="link-secondary">Contactar</a>
+        <a href="<?php echo BASE_URL; ?>/paginas/Services/" class="btn-primary" style="margin-right: 10px;">Ver
+            Servicios</a>
+        <a href="<?php echo BASE_URL; ?>/paginas/About-Me/" class="link-secondary">Contactar</a>
     </div>
 </div><?php include '../../Components/footer.php'; ?>

@@ -1,3 +1,4 @@
+<!-- CONTROL_TEST_999 -->
 <?php
 /**
  * Home - Pablo Cirre Portfolio
@@ -11,6 +12,7 @@ include 'Components/header.php';
 ?>
 
 <!-- Hero Section -->
+<!-- DEBUG: AM I LIVE? -->
 <section class="hero-section">
     <div class="hero-panel panel-1"></div>
     <div class="hero-panel panel-2"></div>
@@ -157,7 +159,7 @@ include 'Components/header.php';
                 <span class="pm-value">99.8%</span>
             </div>
         </div>
-        <a href="<?php echo BASE_URL; ?>/Tools/verificador-email/" class="project-link">Ver más →</a>
+        <a href="<?php echo BASE_URL; ?>/paginas/Tools/KaijuEmailVerifier/" class="project-link">Ver más →</a>
     </div>
 
     <div class="project-card">
