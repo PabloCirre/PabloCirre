@@ -162,21 +162,37 @@ def clean_server(ftp, preserve):
     except Exception as e:
         print(f"  ⚠️  Error during cleanup: {e}")
 
-def should_skip(item, skip_list):
-    """Check if item should be skipped based on skip list."""
+def should_skip(item, skip_list, rel_path=""):
+    """Check if item should be skipped based on skip list.
+    
+    - Simple names like '.git' match anywhere
+    - Root-level exclusions: if rel_path is empty and item matches, skip
+    - Path patterns: if pattern contains path separator, match against full path
+    """
+    full_path = os.path.join(rel_path, item) if rel_path else item
+    
     for pattern in skip_list:
         if pattern.startswith('*'):
             # Wildcard pattern (e.g., *.log)
             if item.endswith(pattern[1:]):
                 return True
+        elif os.sep in pattern or '/' in pattern:
+            # Path pattern - match against full relative path
+            normalized_pattern = pattern.replace('/', os.sep)
+            if full_path == normalized_pattern:
+                return True
         elif item == pattern:
+            # Simple name match - but only at root level for directories like 'Tools'
+            # Allow 'Tools' inside other directories (e.g., paginas/Tools)
+            if pattern == 'Tools' and rel_path:
+                return False  # Don't skip paginas/Tools
             return True
     return False
 
 def upload_recursive(ftp, local_path, skip_list, rel_path=""):
     """Recursively upload files and directories to FTP server."""
     for item in os.listdir(local_path):
-        if should_skip(item, skip_list):
+        if should_skip(item, skip_list, rel_path):
             if rel_path:
                 print(f"  ⏭️  Skipping: {os.path.join(rel_path, item)}")
             else:

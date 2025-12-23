@@ -71,7 +71,7 @@ include '../../Components/header.php';
                 <span class="pm-value">4.9</span>
             </div>
         </div>
-        <a href="<?php echo BASE_URL; ?>/Tools/verificador-email/" class="project-link">Ver más →</a>
+        <a href="<?php echo BASE_URL; ?>/paginas/Tools/KaijuEmailVerifier/" class="project-link">Ver más →</a>
     </div>
 
     <!-- Project 3: Verne Games -->

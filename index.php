@@ -237,7 +237,7 @@ include 'Components/header.php';
         Diseño
         de Videojuegos. Cuéntame tu proyecto.</p>
 
-    <form class="contact-form" action="<?php echo BASE_URL; ?>/paginas/About-Me/" method="get">
+    <form class="contact-form" action="<?php echo BASE_URL; ?>/paginas/Contact/" method="get">
         <label for="contact-email" class="sr-only">Tu Email</label>
         <input type="email" id="contact-email" name="email" placeholder="introduce_tu_email@dominio.com"
             aria-label="Tu dirección de correo electrónico" required>

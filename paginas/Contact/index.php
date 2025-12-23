@@ -11,25 +11,21 @@ include '../../Components/header.php';
 // Logic to load keys securely
 $site_key = '';
 $secret_key = '';
-$keys_file = __DIR__ . '/../../.secrets/recaptcha_keys.txt';
+$keys_file = __DIR__ . '/../../Components/recaptcha_keys.php';
 
 if (file_exists($keys_file)) {
-    $lines = file($keys_file, FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
-    foreach ($lines as $line) {
-        if (strpos($line, 'SITE_KEY=') === 0) {
-            $site_key = substr($line, 9);
-        }
-        if (strpos($line, 'SECRET_KEY=') === 0) {
-            $secret_key = substr($line, 11);
-        }
-    }
+    include $keys_file;
+    if (defined('RECAPTCHA_SITE_KEY'))
+        $site_key = RECAPTCHA_SITE_KEY;
+    if (defined('RECAPTCHA_SECRET_KEY'))
+        $secret_key = RECAPTCHA_SECRET_KEY;
 }
 
 // Fallback if file read fails (for dev, using user provided keys)
 if (empty($site_key))
-    $site_key = '6LeFgzQsAAAAAGB8-alUu_JHZbcVHj7xhdnGpooS';
+    $site_key = '';
 if (empty($secret_key))
-    $secret_key = '6LeFgzQsAAAAABpeB2KCvPyXHzyQESd-SUlILm5w';
+    $secret_key = '';
 
 $message_sent = false;
 $error_message = '';
@@ -57,15 +53,30 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     if ($json_data->success) {
         // Success
+        // Success
         $message_sent = true;
-        // Here you would send the email
+
+        // Send Email
+        $to = "pablo@centraldecomunicacion.es";
+        $subject = "WEB CONTACTO: " . $_POST['name']; // Subject prefix for filtering
+
+        $email_content = "Has recibido un nuevo mensaje desde el formulario web:\n\n";
+        $email_content .= "Nombre: " . $_POST['name'] . "\n";
+        $email_content .= "Email: " . $_POST['email'] . "\n\n";
+        $email_content .= "Mensaje:\n" . $_POST['message'] . "\n";
+
+        $headers = "From: noreply@pablocirre.es\r\n";
+        $headers .= "Reply-To: " . $_POST['email'] . "\r\n";
+        $headers .= "X-Mailer: PHP/" . phpversion();
+
+        @mail($to, $subject, $email_content, $headers);
     } else {
         $error_message = 'Error de Verificación: Por favor certifique que no es un robot.';
     }
 }
 ?>
 
-<script src="https://www.google.com/recaptcha/api.js" async defer></script>
+<script src="https://www.google.com/recaptcha/api.js?render=<?php echo $site_key; ?>"></script>
 
 <!-- WRAPPER GLOBAL PARA AISLAR EL LAYOUT -->
 <div class="custom-contact-container">
@@ -121,7 +132,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
                     <div class="form-group">
                         <label for="email">CORREO ELECTRÓNICO</label>
-                        <input type="email" id="email" name="email" required placeholder="tu@email.com">
+                        <input type="email" id="email" name="email" required placeholder="tu@email.com" value="<?php echo isset($_GET['email']) ? htmlspecialchars($_GET['email']) : ''; ?>">
                     </div>
 
                     <div class="form-group">
@@ -130,72 +141,81 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                             placeholder="Cuéntame sobre tu proyecto..."></textarea>
                     </div>
 
-                    <div class="form-group" style="margin-top: 20px; margin-bottom: 30px;">
-                        <!-- Recaptcha Container with overflow handling -->
-                        <div style="overflow: hidden; max-width: 100%;">
-                            <div class="g-recaptcha" data-sitekey="<?php echo $site_key; ?>"></div>
-                        </div>
-                    </div>
-
-                    <button type="submit" class="submit-btn" style="width: 100%;">
-                        <span class="btn-text">ENVIAR MENSAJE</span>
-                        <div class="btn-glitch"></div>
-                    </button>
-
-                </form>
-            <?php endif; ?>
-
-        </div>
-
-        <!-- Right Column: Direct Channels -->
-        <div class="contact-channels-col">
-
-            <!-- Email Panel -->
-            <a href="mailto:pablo@centraldecomunicacion.es" class="data-panel"
-                style="text-decoration: none; cursor: pointer; transition: all 0.3s;">
-                <div class="panel-header">
-                    <span class="panel-label">EMAIL DIRECTO</span>
-                    <div class="light on"></div>
-                </div>
-                <div class="panel-content" style="align-items: flex-start; text-align: left;">
-                    <div class="metric-value" style="font-size: 1.5rem;">EMAIL</div>
-                    <div class="metric-desc" style="font-family: monospace; color: var(--accent-color);">
-                        pablo@centraldecomunicacion.es</div>
-                </div>
-                <div class="panel-footer">
-                    <span>RESPUESTA: &lt;24H</span>
-                </div>
-            </a>
-
-            <!-- WhatsApp Panel -->
-            <a href="https://wa.me/34657089081" target="_blank" class="data-panel"
-                style="text-decoration: none; cursor: pointer; transition: all 0.3s;">
-                <div class="panel-header">
-                    <span class="panel-label">WHATSAPP PROFESIONAL</span>
-                    <div class="light on"></div>
-                </div>
-                <div class="panel-content" style="align-items: flex-start; text-align: left;">
-                    <div class="metric-value" style="font-size: 1.5rem;">WHATSAPP</div>
-                    <div class="metric-desc" style="font-family: monospace; color: var(--accent-color);">+34 657 089 081
-                    </div>
-                </div>
-                <div class="panel-footer">
-                    <span>DISPONIBLE</span>
-                </div>
-            </a>
-
-            <!-- Info Panel -->
-            <div class="data-panel" style="min-height: auto;">
-                <div class="panel-content" style="align-items: flex-start; text-align: left;">
-                    <p style="font-size: 0.9rem; line-height: 1.6; opacity: 0.8;">
-                        "La comunicación efectiva es el puente entre la confusión y la claridad."
-                    </p>
-                </div>
+                    <!-- Recaptcha v3 Hidden Input -->
+                    <input type="hidden" id="g-recaptcha-response" name="g-recaptcha-response">
             </div>
 
+            <button type="submit" class="submit-btn" style="width: 100%;">
+                <span class="btn-text">ENVIAR MENSAJE</span>
+                <div class="btn-glitch"></div>
+            </button>
+
+            <script>
+                document.querySelector('.contact-terminal').addEventListener('submit', function (e) {
+                    e.preventDefault();
+                    grecaptcha.ready(function () {
+                        grecaptcha.execute('<?php echo $site_key; ?>', { action: 'submit' }).then(function (token) {
+                            document.getElementById('g-recaptcha-response').value = token;
+                            document.querySelector('.contact-terminal').submit();
+                        });
+                    });
+                });
+            </script>
+
+            </form>
+        <?php endif; ?>
+
+    </div>
+
+    <!-- Right Column: Direct Channels -->
+    <div class="contact-channels-col">
+
+        <!-- Email Panel -->
+        <a href="mailto:pablo@centraldecomunicacion.es" class="data-panel"
+            style="text-decoration: none; cursor: pointer; transition: all 0.3s;">
+            <div class="panel-header">
+                <span class="panel-label">EMAIL DIRECTO</span>
+                <div class="light on"></div>
+            </div>
+            <div class="panel-content" style="align-items: flex-start; text-align: left;">
+                <div class="metric-value" style="font-size: 1.5rem;">EMAIL</div>
+                <div class="metric-desc" style="font-family: monospace; color: var(--accent-color);">
+                    pablo@centraldecomunicacion.es</div>
+            </div>
+            <div class="panel-footer">
+                <span>RESPUESTA: &lt;24H</span>
+            </div>
+        </a>
+
+        <!-- WhatsApp Panel -->
+        <a href="https://wa.me/34657089081" target="_blank" class="data-panel"
+            style="text-decoration: none; cursor: pointer; transition: all 0.3s;">
+            <div class="panel-header">
+                <span class="panel-label">WHATSAPP PROFESIONAL</span>
+                <div class="light on"></div>
+            </div>
+            <div class="panel-content" style="align-items: flex-start; text-align: left;">
+                <div class="metric-value" style="font-size: 1.5rem;">WHATSAPP</div>
+                <div class="metric-desc" style="font-family: monospace; color: var(--accent-color);">+34 657 089 081
+                </div>
+            </div>
+            <div class="panel-footer">
+                <span>DISPONIBLE</span>
+            </div>
+        </a>
+
+        <!-- Info Panel -->
+        <div class="data-panel" style="min-height: auto;">
+            <div class="panel-content" style="align-items: flex-start; text-align: left;">
+                <p style="font-size: 0.9rem; line-height: 1.6; opacity: 0.8;">
+                    "La comunicación efectiva es el puente entre la confusión y la claridad."
+                </p>
+            </div>
         </div>
 
     </div>
+
+</div>
 
 </div>
 

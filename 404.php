@@ -26,7 +26,7 @@ include 'Components/header.php';
         " onmouseover="this.style.transform='rotate(0deg) scale(1.02)'"
             onmouseout="this.style.transform='rotate(-3deg)'">
             <img src="<?php echo BASE_URL; ?>/assets/img/404-astro.jpg" alt="Lost Astronaut"
-                style="width: 100%; height: 100%; object-fit: cover;">
+                style="width: 100%; height: 100%; object-fit: cover;" loading="lazy" width="300" height="300">
         </div>
 
         <!-- Text Content -->

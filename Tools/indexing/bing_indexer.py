@@ -15,7 +15,7 @@ def load_config():
     """Load configuration from JSON file."""
     config_path = os.path.join(os.path.dirname(__file__), 'bing_config.json')
     if not os.path.exists(config_path):
-        print(f"⚠️  Config file '{CONFIG_FILE}' not found.")
+        print(f"[WARNING] Config file '{CONFIG_FILE}' not found.")
         print(f"Please create it with your API key and Site URL.")
         return None
     
@@ -23,13 +23,13 @@ def load_config():
         with open(config_path, 'r') as f:
             return json.load(f)
     except Exception as e:
-        print(f"❌ Error loading config: {e}")
+        print(f"[ERROR] Loading config: {e}")
         return None
 
 def fetch_sitemap_urls(sitemap_url):
     """Recursively fetch URLs from sitemap and sitemap index."""
     urls = set()
-    print(f"📡 Fetching sitemap: {sitemap_url}")
+    print(f"[INFO] Fetching sitemap: {sitemap_url}")
     
     headers = {
         'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36'
@@ -60,7 +60,7 @@ def fetch_sitemap_urls(sitemap_url):
                     urls.add(loc.text)
                     
     except Exception as e:
-        print(f"❌ Error processing {sitemap_url}: {e}")
+        print(f"[ERROR] Processing {sitemap_url}: {e}")
         
     return list(urls)
 
@@ -70,13 +70,13 @@ def save_urls(urls, filename):
         with open(filename, 'w') as f:
             for url in urls:
                 f.write(f"{url}\n")
-        print(f"✅ Saved {len(urls)} URLs to {filename}")
+        print(f"[SUCCESS] Saved {len(urls)} URLs to {filename}")
     except Exception as e:
-        print(f"❌ Error saving URLs: {e}")
+        print(f"[ERROR] Saving URLs: {e}")
 
 def submit_to_bing(apikey, site_url, url_list):
     """Submit URLs to Bing Webmaster Tools API."""
-    print(f"\n🚀 Submitting {len(url_list)} URLs to Bing...")
+    print(f"\n[ACTION] Submitting {len(url_list)} URLs to Bing...")
     
     # Bing allows batch submission (limit usually 500 per batch)
     BATCH_SIZE = 500
@@ -93,13 +93,13 @@ def submit_to_bing(apikey, site_url, url_list):
             response = requests.post(url, json=payload, timeout=30)
             
             if response.status_code == 200:
-                print(f"  ✅ Batch {i//BATCH_SIZE + 1}: Success! ({len(batch)} URLs)")
+                print(f"  [SUCCESS] Batch {i//BATCH_SIZE + 1}: Success! ({len(batch)} URLs)")
             else:
-                print(f"  ❌ Batch {i//BATCH_SIZE + 1}: Failed ({response.status_code})")
+                print(f"  [ERROR] Batch {i//BATCH_SIZE + 1}: Failed ({response.status_code})")
                 print(f"     Response: {response.text}")
                 
         except Exception as e:
-            print(f"  ❌ Error submitting batch: {e}")
+            print(f"  [ERROR] Submitting batch: {e}")
 
 def main():
     parser = argparse.ArgumentParser(description="Generate URL list from Sitemap and Index to Bing.")
@@ -116,25 +116,25 @@ def main():
         sitemap_url = config.get("sitemap_url")
     
     if not sitemap_url:
-        print("❌ No sitemap URL provided. Use --sitemap or set it in bing_config.json")
+        print("[ERROR] No sitemap URL provided. Use --sitemap or set it in bing_config.json")
         sys.exit(1)
         
     # 1. Generate URL List
     urls = fetch_sitemap_urls(sitemap_url)
     if not urls:
-        print("⚠️  No URLs found.")
+        print("[WARNING] No URLs found.")
         sys.exit(0)
         
-    print(f"✅ Found {len(urls)} unique URLs.")
+    print(f"[SUCCESS] Found {len(urls)} unique URLs.")
     save_urls(urls, URLS_FILE)
     
     # 2. Submit to Bing
     if args.dry_run:
-        print("ℹ️  Dry run: Skipping Bing submission.")
+        print("[INFO] Dry run: Skipping Bing submission.")
         return
 
     if not config or not config.get("api_key"):
-        print("⚠️  Bing API Key not found in config. Skipping submission.")
+        print("[WARNING] Bing API Key not found in config. Skipping submission.")
         print(f"    URLs are saved in {URLS_FILE}")
         return
         
