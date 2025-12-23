@@ -3,7 +3,7 @@
  * Projects - Portfolio y Casos de Éxito
  */
 
-$page_title = "Portfolio Proyectos | Big Data, SaaS & Videojuegos - Pablo Cirre";
+$page_title = "Proyectos Big Data & SaaS - Pablo Cirre";
 $page_description = "Portfolio de proyectos Big Data, SaaS y Videojuegos. Casos de éxito con 1.4M empresas, KaijuVerifier y Verne Games. Granada.";
 $page_keywords = "proyectos big data, casos de éxito big data, portfolio desarrollador web, proyectos verificación email, desarrollo videojuegos indie";
 

@@ -1,0 +1,1412 @@
+{
+  "base_url": "https://pablocirre.es",
+  "total_pages": 10,
+  "total_errors": 0,
+  "total_warnings": 6,
+  "global_issues": [],
+  "pages": [
+    {
+      "url": "https://pablocirre.es",
+      "status": 200,
+      "metrics": {
+        "status": 200,
+        "html_lang": "es",
+        "has_head": true,
+        "has_doctype": true,
+        "has_meta_charset": true,
+        "has_meta_viewport": true,
+        "url_path": "/",
+        "url_slug": "",
+        "url_path_depth": 0,
+        "word_count": 588,
+        "first_paragraph_length": 115,
+        "title": "Pablo Cirre | Big Data, Formación & Videojuegos - Granada",
+        "title_length": 57,
+        "meta_description": "Pablo Cirre - Experto en Big Data, Email Intelligence, Formación y Experiencias en Vídeo. Granada, España.",
+        "meta_description_length": 106,
+        "meta_keywords_present": true,
+        "meta_keywords_count": 8,
+        "meta_keywords_length": 134,
+        "focus_keywords_from_title": [
+          "pablo",
+          "cirre",
+          "data"
+        ],
+        "slug_has_focus_keyword": false,
+        "first_paragraph_has_focus_keyword": false,
+        "h1_count": 1,
+        "h2_count": 3,
+        "h1_texts": [
+          "Big Data, Email Intelligence, Formación & Experiencias en Vídeo."
+        ],
+        "h2_texts": [
+          "Proyectos Destacados",
+          "Una carrera definida por la curiosidad y el código.",
+          "¿Listo para colaborar?"
+        ],
+        "canonical_url": "https://pablocirre.es/",
+        "meta_robots": null,
+        "x_robots_tag": null,
+        "robots_directives": [],
+        "hreflang_count": 0,
+        "hreflang_codes": [],
+        "hreflang_relative_urls": 0,
+        "hreflang_has_x_default": false,
+        "hreflang_has_self_reference": false,
+        "og_tags_count": 5,
+        "twitter_tags_count": 5,
+        "og_type": "website",
+        "fb_app_id": null,
+        "internal_links": 25,
+        "external_links": 4,
+        "nofollow_links": 0,
+        "empty_anchor_text_count": 0,
+        "generic_anchor_text_count": 0,
+        "broken_internal_links": 0,
+        "images_total": 0,
+        "images_missing_alt": 0,
+        "images_empty_alt": 0,
+        "images_alt_with_focus_keyword": 0,
+        "structured_data_blocks": 1,
+        "structured_data_types": {
+          "WebSite": 1
+        },
+        "structured_data_errors": 0,
+        "rating_values": [],
+        "rating_counts": [],
+        "rating_value_avg": null,
+        "rating_count_sum": 0,
+        "social_profiles_sameAs": [],
+        "has_website_schema": true,
+        "has_organization_schema": false,
+        "has_breadcrumbs": false,
+        "form_inputs_without_label": 0,
+        "inbound_internal_links": 11
+      },
+      "issues": [
+        {
+          "code": "META_KEYWORDS_IGNORED",
+          "severity": "info",
+          "category": "meta",
+          "value": 8,
+          "limit": null,
+          "extra": {
+            "message": "Meta keywords are largely ignored by modern search engines; avoid over-optimizing here."
+          }
+        },
+        {
+          "code": "FIRST_PARAGRAPH_MISSING_FOCUS_KEYWORDS",
+          "severity": "info",
+          "category": "content",
+          "value": [
+            "pablo",
+            "cirre",
+            "data"
+          ],
+          "limit": null,
+          "extra": {
+            "message": "First paragraph does not contain any focus keyword from title."
+          }
+        },
+        {
+          "code": "H1_MISSING_FOCUS_KEYWORDS",
+          "severity": "info",
+          "category": "headings",
+          "value": [
+            "pablo",
+            "cirre"
+          ],
+          "limit": null,
+          "extra": {
+            "message": "Some focus keywords from title do not appear in any H1."
+          }
+        },
+        {
+          "code": "H2_MISSING_FOCUS_KEYWORDS",
+          "severity": "info",
+          "category": "headings",
+          "value": [
+            "pablo",
+            "cirre",
+            "data"
+          ],
+          "limit": null,
+          "extra": {
+            "message": "Some focus keywords from title do not appear in any H2."
+          }
+        }
+      ]
+    },
+    {
+      "url": "https://pablocirre.es/paginas/OpenData/",
+      "status": 200,
+      "metrics": {
+        "status": 200,
+        "html_lang": "es",
+        "has_head": true,
+        "has_doctype": false,
+        "has_meta_charset": true,
+        "has_meta_viewport": true,
+        "url_path": "/paginas/OpenData/",
+        "url_slug": "OpenData",
+        "url_path_depth": 2,
+        "word_count": 688,
+        "first_paragraph_length": 124,
+        "title": "OpenData Empresas España: 1.4M Datos B2B - Pablo Cirre",
+        "title_length": 54,
+        "meta_description": "Base de datos de 1.4 millones de empresas en España. OpenData empresarial, sector turismo B2B, 15+ países europeos. Centraldecomunicacion.es",
+        "meta_description_length": 140,
+        "meta_keywords_present": true,
+        "meta_keywords_count": 6,
+        "meta_keywords_length": 148,
+        "focus_keywords_from_title": [
+          "opendata",
+          "empresas",
+          "españa"
+        ],
+        "slug_has_focus_keyword": true,
+        "first_paragraph_has_focus_keyword": true,
+        "h1_count": 1,
+        "h2_count": 5,
+        "h1_texts": [
+          "1.4M Empresas. OpenData Empresarial."
+        ],
+        "h2_texts": [
+          "La mayor aportación mundial de datos B2B",
+          "Estructura del Dato (48 Campos)",
+          "Plataformas OpenData",
+          "Características Principales",
+          "¿Necesitas acceso a los datos?"
+        ],
+        "canonical_url": "https://pablocirre.es/paginas/OpenData/",
+        "meta_robots": null,
+        "x_robots_tag": null,
+        "robots_directives": [],
+        "hreflang_count": 0,
+        "hreflang_codes": [],
+        "hreflang_relative_urls": 0,
+        "hreflang_has_x_default": false,
+        "hreflang_has_self_reference": false,
+        "og_tags_count": 5,
+        "twitter_tags_count": 5,
+        "og_type": "website",
+        "fb_app_id": null,
+        "internal_links": 25,
+        "external_links": 4,
+        "nofollow_links": 0,
+        "empty_anchor_text_count": 0,
+        "generic_anchor_text_count": 0,
+        "broken_internal_links": 0,
+        "images_total": 0,
+        "images_missing_alt": 0,
+        "images_empty_alt": 0,
+        "images_alt_with_focus_keyword": 0,
+        "structured_data_blocks": 1,
+        "structured_data_types": {
+          "WebSite": 1
+        },
+        "structured_data_errors": 0,
+        "rating_values": [],
+        "rating_counts": [],
+        "rating_value_avg": null,
+        "rating_count_sum": 0,
+        "social_profiles_sameAs": [],
+        "has_website_schema": true,
+        "has_organization_schema": false,
+        "has_breadcrumbs": false,
+        "form_inputs_without_label": 0,
+        "inbound_internal_links": 17
+      },
+      "issues": [
+        {
+          "code": "META_KEYWORDS_IGNORED",
+          "severity": "info",
+          "category": "meta",
+          "value": 6,
+          "limit": null,
+          "extra": {
+            "message": "Meta keywords are largely ignored by modern search engines; avoid over-optimizing here."
+          }
+        },
+        {
+          "code": "H1_MISSING_FOCUS_KEYWORDS",
+          "severity": "info",
+          "category": "headings",
+          "value": [
+            "españa"
+          ],
+          "limit": null,
+          "extra": {
+            "message": "Some focus keywords from title do not appear in any H1."
+          }
+        },
+        {
+          "code": "H2_MISSING_FOCUS_KEYWORDS",
+          "severity": "info",
+          "category": "headings",
+          "value": [
+            "empresas",
+            "españa"
+          ],
+          "limit": null,
+          "extra": {
+            "message": "Some focus keywords from title do not appear in any H2."
+          }
+        }
+      ]
+    },
+    {
+      "url": "https://pablocirre.es/paginas/OpenData/centraldecomunicacion/",
+      "status": 200,
+      "metrics": {
+        "status": 200,
+        "html_lang": "es",
+        "has_head": true,
+        "has_doctype": false,
+        "has_meta_charset": true,
+        "has_meta_viewport": true,
+        "url_path": "/paginas/OpenData/centraldecomunicacion/",
+        "url_slug": "centraldecomunicacion",
+        "url_path_depth": 3,
+        "word_count": 325,
+        "first_paragraph_length": 183,
+        "title": "Roadmap 2026: Big Data desde Granada | Centraldecomunicacion",
+        "title_length": 60,
+        "meta_description": "Roadmap estratégico 2026 y cronología de innovación en datos B2B. Comparativa de proveedores de datos: Centraldecomunicacion vs Informa vs Axesor.",
+        "meta_description_length": 146,
+        "meta_keywords_present": true,
+        "meta_keywords_count": 4,
+        "meta_keywords_length": 102,
+        "focus_keywords_from_title": [
+          "roadmap",
+          "2026",
+          "data"
+        ],
+        "slug_has_focus_keyword": false,
+        "first_paragraph_has_focus_keyword": false,
+        "h1_count": 1,
+        "h2_count": 8,
+        "h1_texts": [
+          "Central\r\n        de Comunicación Del centro de Granada al Big Data mundial"
+        ],
+        "h2_texts": [
+          "IA,\r\n                datos predictivos y 40% de cobertura mundial",
+          "CompaniesData.cloud y Kaiju\r\n                Verifier",
+          "Liderazgo regional",
+          "Rigor académico",
+          "Origen",
+          "Comparativa de Mercado 2025",
+          "De la ficha al Excel: Proceso de Calidad",
+          "Únete al futuro del B2B"
+        ],
+        "canonical_url": "https://pablocirre.es/paginas/OpenData/centraldecomunicacion/",
+        "meta_robots": null,
+        "x_robots_tag": null,
+        "robots_directives": [],
+        "hreflang_count": 0,
+        "hreflang_codes": [],
+        "hreflang_relative_urls": 0,
+        "hreflang_has_x_default": false,
+        "hreflang_has_self_reference": false,
+        "og_tags_count": 5,
+        "twitter_tags_count": 5,
+        "og_type": "website",
+        "fb_app_id": null,
+        "internal_links": 20,
+        "external_links": 15,
+        "nofollow_links": 10,
+        "empty_anchor_text_count": 0,
+        "generic_anchor_text_count": 0,
+        "broken_internal_links": 0,
+        "images_total": 1,
+        "images_missing_alt": 0,
+        "images_empty_alt": 0,
+        "images_alt_with_focus_keyword": 0,
+        "structured_data_blocks": 1,
+        "structured_data_types": {
+          "WebSite": 1
+        },
+        "structured_data_errors": 0,
+        "rating_values": [],
+        "rating_counts": [],
+        "rating_value_avg": null,
+        "rating_count_sum": 0,
+        "social_profiles_sameAs": [],
+        "has_website_schema": true,
+        "has_organization_schema": false,
+        "has_breadcrumbs": false,
+        "form_inputs_without_label": 0,
+        "inbound_internal_links": 12
+      },
+      "issues": [
+        {
+          "code": "CONTENT_LOW",
+          "severity": "info",
+          "category": "content",
+          "value": 325,
+          "limit": 500,
+          "extra": {
+            "message": "Content could be more in-depth; many competitive pages use 500+ words."
+          }
+        },
+        {
+          "code": "META_KEYWORDS_IGNORED",
+          "severity": "info",
+          "category": "meta",
+          "value": 4,
+          "limit": null,
+          "extra": {
+            "message": "Meta keywords are largely ignored by modern search engines; avoid over-optimizing here."
+          }
+        },
+        {
+          "code": "META_DESC_MISSING_FOCUS_KEYWORDS",
+          "severity": "info",
+          "category": "meta",
+          "value": [
+            "data"
+          ],
+          "limit": null,
+          "extra": {
+            "message": "Some focus keywords from title do not appear in meta description."
+          }
+        },
+        {
+          "code": "SLUG_MISSING_FOCUS_KEYWORD",
+          "severity": "info",
+          "category": "technical",
+          "value": {
+            "slug": "centraldecomunicacion",
+            "focus_keywords": [
+              "roadmap",
+              "2026",
+              "data"
+            ]
+          },
+          "limit": null,
+          "extra": {
+            "message": "URL slug does not contain any focus keyword from title."
+          }
+        },
+        {
+          "code": "FIRST_PARAGRAPH_MISSING_FOCUS_KEYWORDS",
+          "severity": "info",
+          "category": "content",
+          "value": [
+            "roadmap",
+            "2026",
+            "data"
+          ],
+          "limit": null,
+          "extra": {
+            "message": "First paragraph does not contain any focus keyword from title."
+          }
+        },
+        {
+          "code": "H1_MISSING_FOCUS_KEYWORDS",
+          "severity": "info",
+          "category": "headings",
+          "value": [
+            "roadmap",
+            "2026"
+          ],
+          "limit": null,
+          "extra": {
+            "message": "Some focus keywords from title do not appear in any H1."
+          }
+        },
+        {
+          "code": "H2_MISSING_FOCUS_KEYWORDS",
+          "severity": "info",
+          "category": "headings",
+          "value": [
+            "roadmap",
+            "2026"
+          ],
+          "limit": null,
+          "extra": {
+            "message": "Some focus keywords from title do not appear in any H2."
+          }
+        },
+        {
+          "code": "IMAGES_ALT_MISSING_FOCUS_KEYWORDS",
+          "severity": "info",
+          "category": "images",
+          "value": [
+            "roadmap",
+            "2026",
+            "data"
+          ],
+          "limit": null,
+          "extra": {
+            "message": "No image alt text contains focus keywords; consider optimizing main visuals."
+          }
+        }
+      ]
+    },
+    {
+      "url": "https://pablocirre.es/paginas/OpenData/companiesdata/",
+      "status": 200,
+      "metrics": {
+        "status": 200,
+        "html_lang": "es",
+        "has_head": true,
+        "has_doctype": false,
+        "has_meta_charset": true,
+        "has_meta_viewport": true,
+        "url_path": "/paginas/OpenData/companiesdata/",
+        "url_slug": "companiesdata",
+        "url_path_depth": 3,
+        "word_count": 530,
+        "first_paragraph_length": 128,
+        "title": "Companies Data Cloud: 27 European B2B Databases",
+        "title_length": 47,
+        "meta_description": "Companiesdata.cloud - Download European business databases with emails. 27 countries, 7M+ companies, Excel and CSV format.",
+        "meta_description_length": 122,
+        "meta_keywords_present": true,
+        "meta_keywords_count": 4,
+        "meta_keywords_length": 93,
+        "focus_keywords_from_title": [
+          "companies",
+          "data",
+          "cloud"
+        ],
+        "slug_has_focus_keyword": true,
+        "first_paragraph_has_focus_keyword": false,
+        "h1_count": 1,
+        "h2_count": 4,
+        "h1_texts": [
+          "Companies Data Cloud 27 Countries Database"
+        ],
+        "h2_texts": [
+          "Europa",
+          "En Desarrollo",
+          "Internacional / Fase Publicación",
+          "¿Necesitas datos empresariales?"
+        ],
+        "canonical_url": "https://pablocirre.es/paginas/OpenData/companiesdata/",
+        "meta_robots": null,
+        "x_robots_tag": null,
+        "robots_directives": [],
+        "hreflang_count": 0,
+        "hreflang_codes": [],
+        "hreflang_relative_urls": 0,
+        "hreflang_has_x_default": false,
+        "hreflang_has_self_reference": false,
+        "og_tags_count": 5,
+        "twitter_tags_count": 5,
+        "og_type": "website",
+        "fb_app_id": null,
+        "internal_links": 21,
+        "external_links": 18,
+        "nofollow_links": 0,
+        "empty_anchor_text_count": 0,
+        "generic_anchor_text_count": 0,
+        "broken_internal_links": 0,
+        "images_total": 0,
+        "images_missing_alt": 0,
+        "images_empty_alt": 0,
+        "images_alt_with_focus_keyword": 0,
+        "structured_data_blocks": 1,
+        "structured_data_types": {
+          "WebSite": 1
+        },
+        "structured_data_errors": 0,
+        "rating_values": [],
+        "rating_counts": [],
+        "rating_value_avg": null,
+        "rating_count_sum": 0,
+        "social_profiles_sameAs": [],
+        "has_website_schema": true,
+        "has_organization_schema": false,
+        "has_breadcrumbs": false,
+        "form_inputs_without_label": 0,
+        "inbound_internal_links": 12
+      },
+      "issues": [
+        {
+          "code": "META_KEYWORDS_IGNORED",
+          "severity": "info",
+          "category": "meta",
+          "value": 4,
+          "limit": null,
+          "extra": {
+            "message": "Meta keywords are largely ignored by modern search engines; avoid over-optimizing here."
+          }
+        },
+        {
+          "code": "FIRST_PARAGRAPH_MISSING_FOCUS_KEYWORDS",
+          "severity": "info",
+          "category": "content",
+          "value": [
+            "companies",
+            "data",
+            "cloud"
+          ],
+          "limit": null,
+          "extra": {
+            "message": "First paragraph does not contain any focus keyword from title."
+          }
+        },
+        {
+          "code": "H2_MISSING_FOCUS_KEYWORDS",
+          "severity": "info",
+          "category": "headings",
+          "value": [
+            "companies",
+            "data",
+            "cloud"
+          ],
+          "limit": null,
+          "extra": {
+            "message": "Some focus keywords from title do not appear in any H2."
+          }
+        }
+      ]
+    },
+    {
+      "url": "https://pablocirre.es/paginas/OpenData/ukbusiness/",
+      "status": 200,
+      "metrics": {
+        "status": 200,
+        "html_lang": "es",
+        "has_head": true,
+        "has_doctype": false,
+        "has_meta_charset": true,
+        "has_meta_viewport": true,
+        "url_path": "/paginas/OpenData/ukbusiness/",
+        "url_slug": "ukbusiness",
+        "url_path_depth": 3,
+        "word_count": 248,
+        "first_paragraph_length": 109,
+        "title": "UK Business Databases | 840K+ UK Companies - Pablo Cirre",
+        "title_length": 56,
+        "meta_description": "ukbusinessdatabases.club - The most comprehensive B2B database in the United Kingdom. 840K+ companies with emails in Excel format.",
+        "meta_description_length": 130,
+        "meta_keywords_present": true,
+        "meta_keywords_count": 5,
+        "meta_keywords_length": 89,
+        "focus_keywords_from_title": [
+          "business",
+          "databases",
+          "840k"
+        ],
+        "slug_has_focus_keyword": true,
+        "first_paragraph_has_focus_keyword": false,
+        "h1_count": 1,
+        "h2_count": 3,
+        "h1_texts": [
+          "UK Business Databases 840K+ Companies"
+        ],
+        "h2_texts": [
+          "ukbusinessdatabases.club: La referencia en UK.",
+          "Características",
+          "¿Necesitas datos de UK?"
+        ],
+        "canonical_url": "https://pablocirre.es/paginas/OpenData/ukbusiness/",
+        "meta_robots": null,
+        "x_robots_tag": null,
+        "robots_directives": [],
+        "hreflang_count": 0,
+        "hreflang_codes": [],
+        "hreflang_relative_urls": 0,
+        "hreflang_has_x_default": false,
+        "hreflang_has_self_reference": false,
+        "og_tags_count": 5,
+        "twitter_tags_count": 5,
+        "og_type": "website",
+        "fb_app_id": null,
+        "internal_links": 21,
+        "external_links": 6,
+        "nofollow_links": 0,
+        "empty_anchor_text_count": 0,
+        "generic_anchor_text_count": 0,
+        "broken_internal_links": 0,
+        "images_total": 0,
+        "images_missing_alt": 0,
+        "images_empty_alt": 0,
+        "images_alt_with_focus_keyword": 0,
+        "structured_data_blocks": 1,
+        "structured_data_types": {
+          "WebSite": 1
+        },
+        "structured_data_errors": 0,
+        "rating_values": [],
+        "rating_counts": [],
+        "rating_value_avg": null,
+        "rating_count_sum": 0,
+        "social_profiles_sameAs": [],
+        "has_website_schema": true,
+        "has_organization_schema": false,
+        "has_breadcrumbs": false,
+        "form_inputs_without_label": 0,
+        "inbound_internal_links": 12
+      },
+      "issues": [
+        {
+          "code": "CONTENT_THIN",
+          "severity": "warning",
+          "category": "content",
+          "value": 248,
+          "limit": 300,
+          "extra": {
+            "message": "Very low word count; aim for 300+ words for most pages."
+          }
+        },
+        {
+          "code": "META_KEYWORDS_IGNORED",
+          "severity": "info",
+          "category": "meta",
+          "value": 5,
+          "limit": null,
+          "extra": {
+            "message": "Meta keywords are largely ignored by modern search engines; avoid over-optimizing here."
+          }
+        },
+        {
+          "code": "FIRST_PARAGRAPH_MISSING_FOCUS_KEYWORDS",
+          "severity": "info",
+          "category": "content",
+          "value": [
+            "business",
+            "databases",
+            "840k"
+          ],
+          "limit": null,
+          "extra": {
+            "message": "First paragraph does not contain any focus keyword from title."
+          }
+        },
+        {
+          "code": "H2_MISSING_FOCUS_KEYWORDS",
+          "severity": "info",
+          "category": "headings",
+          "value": [
+            "840k"
+          ],
+          "limit": null,
+          "extra": {
+            "message": "Some focus keywords from title do not appear in any H2."
+          }
+        }
+      ]
+    },
+    {
+      "url": "https://pablocirre.es/paginas/OpenData/enterprises/",
+      "status": 200,
+      "metrics": {
+        "status": 200,
+        "html_lang": "es",
+        "has_head": true,
+        "has_doctype": false,
+        "has_meta_charset": true,
+        "has_meta_viewport": true,
+        "url_path": "/paginas/OpenData/enterprises/",
+        "url_slug": "enterprises",
+        "url_path_depth": 3,
+        "word_count": 232,
+        "first_paragraph_length": 134,
+        "title": "Central Enterprises | Unified API Beta - Pablo Cirre",
+        "title_length": 52,
+        "meta_description": "central.enterprises - Unified Enterprise API for accessing all business databases from a single endpoint. GraphQL and REST API in development.",
+        "meta_description_length": 142,
+        "meta_keywords_present": true,
+        "meta_keywords_count": 5,
+        "meta_keywords_length": 81,
+        "focus_keywords_from_title": [
+          "central",
+          "enterprises",
+          "unified"
+        ],
+        "slug_has_focus_keyword": true,
+        "first_paragraph_has_focus_keyword": false,
+        "h1_count": 1,
+        "h2_count": 4,
+        "h1_texts": [
+          "Central Enterprises Unified API BETA"
+        ],
+        "h2_texts": [
+          "Un endpoint. Toda la data.",
+          "Características Planificadas",
+          "Roadmap",
+          "Únete a la Waitlist"
+        ],
+        "canonical_url": "https://pablocirre.es/paginas/OpenData/enterprises/",
+        "meta_robots": null,
+        "x_robots_tag": null,
+        "robots_directives": [],
+        "hreflang_count": 0,
+        "hreflang_codes": [],
+        "hreflang_relative_urls": 0,
+        "hreflang_has_x_default": false,
+        "hreflang_has_self_reference": false,
+        "og_tags_count": 5,
+        "twitter_tags_count": 5,
+        "og_type": "website",
+        "fb_app_id": null,
+        "internal_links": 22,
+        "external_links": 4,
+        "nofollow_links": 0,
+        "empty_anchor_text_count": 0,
+        "generic_anchor_text_count": 0,
+        "broken_internal_links": 0,
+        "images_total": 0,
+        "images_missing_alt": 0,
+        "images_empty_alt": 0,
+        "images_alt_with_focus_keyword": 0,
+        "structured_data_blocks": 1,
+        "structured_data_types": {
+          "WebSite": 1
+        },
+        "structured_data_errors": 0,
+        "rating_values": [],
+        "rating_counts": [],
+        "rating_value_avg": null,
+        "rating_count_sum": 0,
+        "social_profiles_sameAs": [],
+        "has_website_schema": true,
+        "has_organization_schema": false,
+        "has_breadcrumbs": false,
+        "form_inputs_without_label": 0,
+        "inbound_internal_links": 12
+      },
+      "issues": [
+        {
+          "code": "CONTENT_THIN",
+          "severity": "warning",
+          "category": "content",
+          "value": 232,
+          "limit": 300,
+          "extra": {
+            "message": "Very low word count; aim for 300+ words for most pages."
+          }
+        },
+        {
+          "code": "META_KEYWORDS_IGNORED",
+          "severity": "info",
+          "category": "meta",
+          "value": 5,
+          "limit": null,
+          "extra": {
+            "message": "Meta keywords are largely ignored by modern search engines; avoid over-optimizing here."
+          }
+        },
+        {
+          "code": "FIRST_PARAGRAPH_MISSING_FOCUS_KEYWORDS",
+          "severity": "info",
+          "category": "content",
+          "value": [
+            "central",
+            "enterprises",
+            "unified"
+          ],
+          "limit": null,
+          "extra": {
+            "message": "First paragraph does not contain any focus keyword from title."
+          }
+        },
+        {
+          "code": "H2_MISSING_FOCUS_KEYWORDS",
+          "severity": "info",
+          "category": "headings",
+          "value": [
+            "central",
+            "enterprises",
+            "unified"
+          ],
+          "limit": null,
+          "extra": {
+            "message": "Some focus keywords from title do not appear in any H2."
+          }
+        }
+      ]
+    },
+    {
+      "url": "https://pablocirre.es/paginas/Tools/",
+      "status": 200,
+      "metrics": {
+        "status": 200,
+        "html_lang": "es",
+        "has_head": true,
+        "has_doctype": true,
+        "has_meta_charset": true,
+        "has_meta_viewport": true,
+        "url_path": "/paginas/Tools/",
+        "url_slug": "Tools",
+        "url_path_depth": 2,
+        "word_count": 133,
+        "first_paragraph_length": 133,
+        "title": "Tools | Herramientas Profesionales - Pablo Cirre",
+        "title_length": 48,
+        "meta_description": "Herramientas profesionales para desarrolladores y marketers. Kaiju Bulk Email Verifier email verification, análisis de datos, y más.",
+        "meta_description_length": 132,
+        "meta_keywords_present": true,
+        "meta_keywords_count": 5,
+        "meta_keywords_length": 116,
+        "focus_keywords_from_title": [
+          "tools",
+          "herramientas",
+          "profesionales"
+        ],
+        "slug_has_focus_keyword": true,
+        "first_paragraph_has_focus_keyword": true,
+        "h1_count": 1,
+        "h2_count": 3,
+        "h1_texts": [
+          "Tools. Herramientas Profesionales."
+        ],
+        "h2_texts": [
+          "Herramientas Disponibles",
+          "Por Qué Nuestras Tools",
+          "¿Necesitas una herramienta custom?"
+        ],
+        "canonical_url": "https://pablocirre.es/paginas/Tools/",
+        "meta_robots": null,
+        "x_robots_tag": null,
+        "robots_directives": [],
+        "hreflang_count": 0,
+        "hreflang_codes": [],
+        "hreflang_relative_urls": 0,
+        "hreflang_has_x_default": false,
+        "hreflang_has_self_reference": false,
+        "og_tags_count": 5,
+        "twitter_tags_count": 5,
+        "og_type": "website",
+        "fb_app_id": null,
+        "internal_links": 22,
+        "external_links": 4,
+        "nofollow_links": 0,
+        "empty_anchor_text_count": 0,
+        "generic_anchor_text_count": 0,
+        "broken_internal_links": 0,
+        "images_total": 0,
+        "images_missing_alt": 0,
+        "images_empty_alt": 0,
+        "images_alt_with_focus_keyword": 0,
+        "structured_data_blocks": 1,
+        "structured_data_types": {
+          "WebSite": 1
+        },
+        "structured_data_errors": 0,
+        "rating_values": [],
+        "rating_counts": [],
+        "rating_value_avg": null,
+        "rating_count_sum": 0,
+        "social_profiles_sameAs": [],
+        "has_website_schema": true,
+        "has_organization_schema": false,
+        "has_breadcrumbs": false,
+        "form_inputs_without_label": 0,
+        "inbound_internal_links": 11
+      },
+      "issues": [
+        {
+          "code": "CONTENT_THIN",
+          "severity": "warning",
+          "category": "content",
+          "value": 133,
+          "limit": 300,
+          "extra": {
+            "message": "Very low word count; aim for 300+ words for most pages."
+          }
+        },
+        {
+          "code": "META_KEYWORDS_IGNORED",
+          "severity": "info",
+          "category": "meta",
+          "value": 5,
+          "limit": null,
+          "extra": {
+            "message": "Meta keywords are largely ignored by modern search engines; avoid over-optimizing here."
+          }
+        },
+        {
+          "code": "META_DESC_MISSING_FOCUS_KEYWORDS",
+          "severity": "info",
+          "category": "meta",
+          "value": [
+            "tools"
+          ],
+          "limit": null,
+          "extra": {
+            "message": "Some focus keywords from title do not appear in meta description."
+          }
+        },
+        {
+          "code": "H2_MISSING_FOCUS_KEYWORDS",
+          "severity": "info",
+          "category": "headings",
+          "value": [
+            "profesionales"
+          ],
+          "limit": null,
+          "extra": {
+            "message": "Some focus keywords from title do not appear in any H2."
+          }
+        }
+      ]
+    },
+    {
+      "url": "https://pablocirre.es/paginas/Experiences/",
+      "status": 200,
+      "metrics": {
+        "status": 200,
+        "html_lang": "es",
+        "has_head": true,
+        "has_doctype": true,
+        "has_meta_charset": true,
+        "has_meta_viewport": true,
+        "url_path": "/paginas/Experiences/",
+        "url_slug": "Experiences",
+        "url_path_depth": 2,
+        "word_count": 343,
+        "first_paragraph_length": 138,
+        "title": "Formación Desarrollo Web | Cámara Comercio Granada - Pablo Cirre",
+        "title_length": 64,
+        "meta_description": "Formación en desarrollo web. Cursos en Cámara de Comercio Granada, talleres corporativos, vídeos formativos. Profesor experto.",
+        "meta_description_length": 126,
+        "meta_keywords_present": true,
+        "meta_keywords_count": 6,
+        "meta_keywords_length": 163,
+        "focus_keywords_from_title": [
+          "formación",
+          "desarrollo",
+          "cámara"
+        ],
+        "slug_has_focus_keyword": false,
+        "first_paragraph_has_focus_keyword": true,
+        "h1_count": 1,
+        "h2_count": 3,
+        "h1_texts": [
+          "Formación & Experiencias en Vídeo."
+        ],
+        "h2_texts": [
+          "Profesor en Cámara de Comercio",
+          "Cursos Principales",
+          "Testimonios de Alumnos"
+        ],
+        "canonical_url": "https://pablocirre.es/paginas/Experiences/",
+        "meta_robots": null,
+        "x_robots_tag": null,
+        "robots_directives": [],
+        "hreflang_count": 0,
+        "hreflang_codes": [],
+        "hreflang_relative_urls": 0,
+        "hreflang_has_x_default": false,
+        "hreflang_has_self_reference": false,
+        "og_tags_count": 5,
+        "twitter_tags_count": 5,
+        "og_type": "website",
+        "fb_app_id": null,
+        "internal_links": 19,
+        "external_links": 4,
+        "nofollow_links": 0,
+        "empty_anchor_text_count": 0,
+        "generic_anchor_text_count": 0,
+        "broken_internal_links": 0,
+        "images_total": 0,
+        "images_missing_alt": 0,
+        "images_empty_alt": 0,
+        "images_alt_with_focus_keyword": 0,
+        "structured_data_blocks": 1,
+        "structured_data_types": {
+          "WebSite": 1
+        },
+        "structured_data_errors": 0,
+        "rating_values": [],
+        "rating_counts": [],
+        "rating_value_avg": null,
+        "rating_count_sum": 0,
+        "social_profiles_sameAs": [],
+        "has_website_schema": true,
+        "has_organization_schema": false,
+        "has_breadcrumbs": false,
+        "form_inputs_without_label": 0,
+        "inbound_internal_links": 13
+      },
+      "issues": [
+        {
+          "code": "CONTENT_LOW",
+          "severity": "info",
+          "category": "content",
+          "value": 343,
+          "limit": 500,
+          "extra": {
+            "message": "Content could be more in-depth; many competitive pages use 500+ words."
+          }
+        },
+        {
+          "code": "TITLE_TOO_LONG",
+          "severity": "warning",
+          "category": "meta",
+          "value": 64,
+          "limit": 60,
+          "extra": {
+            "message": "Title is long; >60 chars may be truncated or rewritten in SERPs."
+          }
+        },
+        {
+          "code": "META_KEYWORDS_IGNORED",
+          "severity": "info",
+          "category": "meta",
+          "value": 6,
+          "limit": null,
+          "extra": {
+            "message": "Meta keywords are largely ignored by modern search engines; avoid over-optimizing here."
+          }
+        },
+        {
+          "code": "SLUG_MISSING_FOCUS_KEYWORD",
+          "severity": "info",
+          "category": "technical",
+          "value": {
+            "slug": "Experiences",
+            "focus_keywords": [
+              "formación",
+              "desarrollo",
+              "cámara"
+            ]
+          },
+          "limit": null,
+          "extra": {
+            "message": "URL slug does not contain any focus keyword from title."
+          }
+        },
+        {
+          "code": "H1_MISSING_FOCUS_KEYWORDS",
+          "severity": "info",
+          "category": "headings",
+          "value": [
+            "desarrollo",
+            "cámara"
+          ],
+          "limit": null,
+          "extra": {
+            "message": "Some focus keywords from title do not appear in any H1."
+          }
+        },
+        {
+          "code": "H2_MISSING_FOCUS_KEYWORDS",
+          "severity": "info",
+          "category": "headings",
+          "value": [
+            "formación",
+            "desarrollo"
+          ],
+          "limit": null,
+          "extra": {
+            "message": "Some focus keywords from title do not appear in any H2."
+          }
+        }
+      ]
+    },
+    {
+      "url": "https://pablocirre.es/paginas/Services/",
+      "status": 200,
+      "metrics": {
+        "status": 200,
+        "html_lang": "es",
+        "has_head": true,
+        "has_doctype": false,
+        "has_meta_charset": true,
+        "has_meta_viewport": true,
+        "url_path": "/paginas/Services/",
+        "url_slug": "Services",
+        "url_path_depth": 2,
+        "word_count": 355,
+        "first_paragraph_length": 152,
+        "title": "Servicios Consultoría Big Data | Desarrollo Soluciones - Pablo Cirre",
+        "title_length": 68,
+        "meta_description": "Servicios de consultoría Big Data, desarrollo de soluciones, verificación email, videojuegos. Arquitectura de datos. Granada, España.",
+        "meta_description_length": 133,
+        "meta_keywords_present": true,
+        "meta_keywords_count": 5,
+        "meta_keywords_length": 144,
+        "focus_keywords_from_title": [
+          "servicios",
+          "consultoría",
+          "data"
+        ],
+        "slug_has_focus_keyword": false,
+        "first_paragraph_has_focus_keyword": true,
+        "h1_count": 1,
+        "h2_count": 4,
+        "h1_texts": [
+          "Servicios & Consultoría Técnica."
+        ],
+        "h2_texts": [
+          "Servicios Principales",
+          "Planes de Servicio",
+          "Proceso de Trabajo",
+          "¿Listo para empezar tu proyecto?"
+        ],
+        "canonical_url": "https://pablocirre.es/paginas/Services/",
+        "meta_robots": null,
+        "x_robots_tag": null,
+        "robots_directives": [],
+        "hreflang_count": 0,
+        "hreflang_codes": [],
+        "hreflang_relative_urls": 0,
+        "hreflang_has_x_default": false,
+        "hreflang_has_self_reference": false,
+        "og_tags_count": 5,
+        "twitter_tags_count": 5,
+        "og_type": "website",
+        "fb_app_id": null,
+        "internal_links": 26,
+        "external_links": 4,
+        "nofollow_links": 0,
+        "empty_anchor_text_count": 0,
+        "generic_anchor_text_count": 0,
+        "broken_internal_links": 0,
+        "images_total": 0,
+        "images_missing_alt": 0,
+        "images_empty_alt": 0,
+        "images_alt_with_focus_keyword": 0,
+        "structured_data_blocks": 1,
+        "structured_data_types": {
+          "WebSite": 1
+        },
+        "structured_data_errors": 0,
+        "rating_values": [],
+        "rating_counts": [],
+        "rating_value_avg": null,
+        "rating_count_sum": 0,
+        "social_profiles_sameAs": [],
+        "has_website_schema": true,
+        "has_organization_schema": false,
+        "has_breadcrumbs": false,
+        "form_inputs_without_label": 1,
+        "inbound_internal_links": 13
+      },
+      "issues": [
+        {
+          "code": "CONTENT_LOW",
+          "severity": "info",
+          "category": "content",
+          "value": 355,
+          "limit": 500,
+          "extra": {
+            "message": "Content could be more in-depth; many competitive pages use 500+ words."
+          }
+        },
+        {
+          "code": "TITLE_TOO_LONG",
+          "severity": "warning",
+          "category": "meta",
+          "value": 68,
+          "limit": 60,
+          "extra": {
+            "message": "Title is long; >60 chars may be truncated or rewritten in SERPs."
+          }
+        },
+        {
+          "code": "META_KEYWORDS_IGNORED",
+          "severity": "info",
+          "category": "meta",
+          "value": 5,
+          "limit": null,
+          "extra": {
+            "message": "Meta keywords are largely ignored by modern search engines; avoid over-optimizing here."
+          }
+        },
+        {
+          "code": "SLUG_MISSING_FOCUS_KEYWORD",
+          "severity": "info",
+          "category": "technical",
+          "value": {
+            "slug": "Services",
+            "focus_keywords": [
+              "servicios",
+              "consultoría",
+              "data"
+            ]
+          },
+          "limit": null,
+          "extra": {
+            "message": "URL slug does not contain any focus keyword from title."
+          }
+        },
+        {
+          "code": "H1_MISSING_FOCUS_KEYWORDS",
+          "severity": "info",
+          "category": "headings",
+          "value": [
+            "data"
+          ],
+          "limit": null,
+          "extra": {
+            "message": "Some focus keywords from title do not appear in any H1."
+          }
+        },
+        {
+          "code": "H2_MISSING_FOCUS_KEYWORDS",
+          "severity": "info",
+          "category": "headings",
+          "value": [
+            "consultoría",
+            "data"
+          ],
+          "limit": null,
+          "extra": {
+            "message": "Some focus keywords from title do not appear in any H2."
+          }
+        },
+        {
+          "code": "FORM_INPUTS_WITHOUT_LABEL",
+          "severity": "info",
+          "category": "accessibility",
+          "value": 1,
+          "limit": null,
+          "extra": {
+            "message": "Form fields without label or aria-label; hurts accessibility."
+          }
+        }
+      ]
+    },
+    {
+      "url": "https://pablocirre.es/paginas/Projects/",
+      "status": 200,
+      "metrics": {
+        "status": 200,
+        "html_lang": "es",
+        "has_head": true,
+        "has_doctype": false,
+        "has_meta_charset": true,
+        "has_meta_viewport": true,
+        "url_path": "/paginas/Projects/",
+        "url_slug": "Projects",
+        "url_path_depth": 2,
+        "word_count": 282,
+        "first_paragraph_length": 138,
+        "title": "Proyectos Big Data & SaaS - Pablo Cirre",
+        "title_length": 39,
+        "meta_description": "Portfolio de proyectos Big Data, SaaS y Videojuegos. Casos de éxito con 1.4M empresas, KaijuVerifier y Verne Games. Granada.",
+        "meta_description_length": 124,
+        "meta_keywords_present": true,
+        "meta_keywords_count": 5,
+        "meta_keywords_length": 132,
+        "focus_keywords_from_title": [
+          "proyectos",
+          "data",
+          "saas"
+        ],
+        "slug_has_focus_keyword": false,
+        "first_paragraph_has_focus_keyword": true,
+        "h1_count": 1,
+        "h2_count": 2,
+        "h1_texts": [
+          "Portfolio & Casos de Éxito."
+        ],
+        "h2_texts": [
+          "Proyectos Destacados",
+          "Lo Que Dicen los Clientes"
+        ],
+        "canonical_url": "https://pablocirre.es/paginas/Projects/",
+        "meta_robots": null,
+        "x_robots_tag": null,
+        "robots_directives": [],
+        "hreflang_count": 0,
+        "hreflang_codes": [],
+        "hreflang_relative_urls": 0,
+        "hreflang_has_x_default": false,
+        "hreflang_has_self_reference": false,
+        "og_tags_count": 5,
+        "twitter_tags_count": 5,
+        "og_type": "website",
+        "fb_app_id": null,
+        "internal_links": 23,
+        "external_links": 4,
+        "nofollow_links": 0,
+        "empty_anchor_text_count": 0,
+        "generic_anchor_text_count": 0,
+        "broken_internal_links": 0,
+        "images_total": 0,
+        "images_missing_alt": 0,
+        "images_empty_alt": 0,
+        "images_alt_with_focus_keyword": 0,
+        "structured_data_blocks": 1,
+        "structured_data_types": {
+          "WebSite": 1
+        },
+        "structured_data_errors": 0,
+        "rating_values": [],
+        "rating_counts": [],
+        "rating_value_avg": null,
+        "rating_count_sum": 0,
+        "social_profiles_sameAs": [],
+        "has_website_schema": true,
+        "has_organization_schema": false,
+        "has_breadcrumbs": false,
+        "form_inputs_without_label": 0,
+        "inbound_internal_links": 12
+      },
+      "issues": [
+        {
+          "code": "CONTENT_THIN",
+          "severity": "warning",
+          "category": "content",
+          "value": 282,
+          "limit": 300,
+          "extra": {
+            "message": "Very low word count; aim for 300+ words for most pages."
+          }
+        },
+        {
+          "code": "META_KEYWORDS_IGNORED",
+          "severity": "info",
+          "category": "meta",
+          "value": 5,
+          "limit": null,
+          "extra": {
+            "message": "Meta keywords are largely ignored by modern search engines; avoid over-optimizing here."
+          }
+        },
+        {
+          "code": "SLUG_MISSING_FOCUS_KEYWORD",
+          "severity": "info",
+          "category": "technical",
+          "value": {
+            "slug": "Projects",
+            "focus_keywords": [
+              "proyectos",
+              "data",
+              "saas"
+            ]
+          },
+          "limit": null,
+          "extra": {
+            "message": "URL slug does not contain any focus keyword from title."
+          }
+        },
+        {
+          "code": "H1_MISSING_FOCUS_KEYWORDS",
+          "severity": "info",
+          "category": "headings",
+          "value": [
+            "proyectos",
+            "data",
+            "saas"
+          ],
+          "limit": null,
+          "extra": {
+            "message": "Some focus keywords from title do not appear in any H1."
+          }
+        },
+        {
+          "code": "H2_MISSING_FOCUS_KEYWORDS",
+          "severity": "info",
+          "category": "headings",
+          "value": [
+            "data",
+            "saas"
+          ],
+          "limit": null,
+          "extra": {
+            "message": "Some focus keywords from title do not appear in any H2."
+          }
+        }
+      ]
+    }
+  ]
+}

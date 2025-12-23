@@ -3,7 +3,7 @@
  * Companies Data Cloud - European Business Databases
  */
 
-$page_title = "Companies Data Cloud | 27 Countries Business Databases - Pablo Cirre";
+$page_title = "Companies Data Cloud: 27 European B2B Databases";
 $page_description = "Companiesdata.cloud - Download European business databases with emails. 27 countries, 7M+ companies, Excel and CSV format.";
 $page_keywords = "companiesdata cloud, european business database, company emails europe, B2B database download";
 
@@ -90,7 +90,7 @@ include '../../../Components/header.php';
 <!-- Europe Section -->
 <h2 class="section-title">Europa</h2>
 <p class="section-subtitle"
-    style="margin-bottom: 40px; color: #666; width: 90vw; max-width: 900px; margin-left: auto; margin-right: auto; padding-left: 5px;">
+    style="margin-bottom: 40px; color: var(--text-secondary); width: 90vw; max-width: 900px; margin-left: auto; margin-right: auto; padding-left: 5px;">
     Bases de datos disponibles para descarga
     inmediata.</p>
 
@@ -233,7 +233,7 @@ include '../../../Components/header.php';
 <!-- En Desarrollo -->
 <h2 class="section-title">En Desarrollo</h2>
 <p class="section-subtitle"
-    style="margin-bottom: 40px; color: #666; width: 90vw; max-width: 900px; margin-left: auto; margin-right: auto; padding-left: 5px;">
+    style="margin-bottom: 40px; color: var(--text-secondary); width: 90vw; max-width: 900px; margin-left: auto; margin-right: auto; padding-left: 5px;">
     Próximamente disponibles.</p>
 
 <div class="projects-grid" style="margin-bottom: 80px;">
@@ -323,7 +323,7 @@ include '../../../Components/header.php';
 <!-- International / Fase Publicacion -->
 <h2 class="section-title">Internacional / Fase Publicación</h2>
 <p class="section-subtitle"
-    style="margin-bottom: 40px; color: #666; width: 90vw; max-width: 900px; margin-left: auto; margin-right: auto; padding-left: 5px;">
+    style="margin-bottom: 40px; color: var(--text-secondary); width: 90vw; max-width: 900px; margin-left: auto; margin-right: auto; padding-left: 5px;">
     Bases de datos globales en proceso de publicación.
 </p>
 
@@ -400,7 +400,8 @@ include '../../../Components/header.php';
 <!-- CTA Section -->
 <div class="contact-section">
     <h2 style="font-size: 2rem; margin-bottom: 10px;">¿Necesitas datos empresariales?</h2>
-    <p style="color: #666; margin-bottom: 30px;">Descarga bases de datos en Excel y CSV de 19 países.</p>
+    <p style="color: var(--text-secondary); margin-bottom: 30px;">Descarga bases de datos en Excel y CSV de 19 países.
+    </p>
 
     <div style="max-width: 500px; margin: 0 auto;">
         <a href="https://companiesdata.cloud" target="_blank" rel="noopener" class="btn-primary"

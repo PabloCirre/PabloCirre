@@ -230,7 +230,8 @@ include '../../../Components/header.php';
 <!-- CTA Section -->
 <div class="contact-section">
     <h2 style="font-size: 2rem; margin-bottom: 10px;">Únete a la Waitlist</h2>
-    <p style="color: #666; margin-bottom: 30px;">Sé el primero en acceder cuando lancemos la beta pública.</p>
+    <p style="color: var(--text-secondary); margin-bottom: 30px;">Sé el primero en acceder cuando lancemos la beta
+        pública.</p>
 
     <div style="max-width: 500px; margin: 0 auto;">
         <a href="<?php echo BASE_URL; ?>/paginas/About-Me/" class="btn-primary">Contactar para Early Access</a>

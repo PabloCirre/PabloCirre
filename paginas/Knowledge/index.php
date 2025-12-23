@@ -267,14 +267,15 @@ include '../../Components/header.php';
 <!-- Newsletter -->
 <div class="contact-section">
     <h2 style="font-size: 2rem; margin-bottom: 10px;">Newsletter Semanal</h2>
-    <p style="color: #666; margin-bottom: 30px;">Recibe los mejores artículos, tutoriales y recursos directo en tu
+    <p style="color: var(--text-secondary); margin-bottom: 30px;">Recibe los mejores artículos, tutoriales y recursos
+        directo en tu
         inbox. Sin spam.</p>
 
     <form class="contact-form">
         <input type="email" placeholder="tu_email@dominio.com" required>
         <button type="submit" class="btn-primary">Suscribirme</button>
     </form>
-    <p style="margin-top: 15px; font-size: 0.85rem; color: #999;">+2,500 desarrolladores suscritos</p>
+    <p style="margin-top: 15px; font-size: 0.85rem; color: var(--text-secondary);">+2,500 desarrolladores suscritos</p>
 </div>
 
 <?php include '../../Components/footer.php'; ?>

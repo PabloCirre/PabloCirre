@@ -1,4 +1,18 @@
 <?php
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
+
+if (isset($_GET['raw_mode'])) {
+    if ($_GET['raw_mode'] === 'on') {
+        $_SESSION['raw_mode'] = true;
+    } elseif ($_GET['raw_mode'] === 'off') {
+        $_SESSION['raw_mode'] = false;
+    }
+}
+
+$is_raw_mode = isset($_SESSION['raw_mode']) && $_SESSION['raw_mode'] === true;
+
 header('Content-Type: text/html; charset=utf-8');
 /**
  * Header común para Pablo Cirre Portfolio
@@ -11,6 +25,18 @@ if ($current_page == 'PabloCirre') {
     $current_page = 'home';
 }
 
+// Canonical URL Logic
+$protocol = (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off' || $_SERVER['SERVER_PORT'] == 443) ? "https://" : "http://";
+$host = $_SERVER['HTTP_HOST'];
+$uri_path = strtok($_SERVER["REQUEST_URI"], '?');
+// Strip index.php from the URI path to avoid duplicate content
+$uri_path = str_replace('/index.php', '', $uri_path);
+// Ensure trailing slash for directories (optional, but good for consistency) if it's not root
+if ($uri_path !== '/' && substr($uri_path, -1) !== '/') {
+    $uri_path .= '/';
+}
+$canonical_url = $protocol . $host . $uri_path;
+
 require_once __DIR__ . '/config.php';
 ?>
 <!DOCTYPE html>
@@ -19,6 +45,41 @@ require_once __DIR__ . '/config.php';
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="canonical" href="<?php echo htmlspecialchars($canonical_url); ?>" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="<?php echo htmlspecialchars($canonical_url); ?>" />
+    <meta property="og:title"
+        content="<?php echo isset($page_title) ? htmlspecialchars($page_title) : 'Pablo Cirre'; ?>" />
+    <meta property="og:description"
+        content="<?php echo isset($page_description) ? htmlspecialchars($page_description) : 'Pablo Cirre - Big Data, Email Intelligence, Formación & Experiencias en Vídeo'; ?>" />
+    <meta property="og:image" content="<?php echo $protocol . $host . BASE_URL; ?>/assets/images/favicon.png" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:url" content="<?php echo htmlspecialchars($canonical_url); ?>" />
+    <meta name="twitter:title"
+        content="<?php echo isset($page_title) ? htmlspecialchars($page_title) : 'Pablo Cirre'; ?>" />
+    <meta name="twitter:description"
+        content="<?php echo isset($page_description) ? htmlspecialchars($page_description) : 'Pablo Cirre - Big Data, Email Intelligence, Formación & Experiencias en Vídeo'; ?>" />
+    <meta name="twitter:image" content="<?php echo $protocol . $host . BASE_URL; ?>/assets/images/favicon.png" />
+
+    <!-- Schema.org JSON-LD -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "Pablo Cirre",
+        "url": "<?php echo htmlspecialchars($canonical_url); ?>",
+        "description": "<?php echo isset($page_description) ? htmlspecialchars($page_description) : 'Pablo Cirre - Big Data, Email Intelligence, Formación & Experiencias en Vídeo'; ?>",
+        "author": {
+            "@type": "Person",
+            "name": "Pablo Cirre"
+        }
+    }
+    </script>
+
     <meta name="description"
         content="<?php echo isset($page_description) ? $page_description : 'Pablo Cirre - Big Data, Email Intelligence, Formación & Experiencias en Vídeo'; ?>">
     <meta name="keywords"
@@ -27,27 +88,53 @@ require_once __DIR__ . '/config.php';
         <?php echo isset($page_title) ? $page_title : 'Pablo Cirre - Big Data, Email Intelligence, Formación & Experiencias en Vídeo'; ?>
     </title>
 
-    <!-- Favicon -->
-    <link rel="icon" type="image/png" href="<?php echo BASE_URL; ?>/assets/images/favicon.png">
+    <?php if (!$is_raw_mode): ?>
+        <!-- Favicon -->
+        <link rel="icon" type="image/png" href="<?php echo BASE_URL; ?>/assets/images/favicon.png">
 
-    <!-- Fonts - Extended for font switcher -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Space+Grotesk:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@300;500;700&family=Outfit:wght@400;500;600;700&family=Syne:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Bricolage+Grotesque:wght@400;500;600;700&family=Unbounded:wght@400;500;600;700&family=Bebas+Neue&family=Abril+Fatface&family=Playfair+Display:wght@400;500;600;700&display=swap"
-        rel="stylesheet">
+        <!-- Performance Optimization -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="preconnect" href="https://www.google-analytics.com">
 
-    <!-- Main CSS -->
-    <link rel="stylesheet" href="<?php echo BASE_URL; ?>/assets/css/main.css">
-    <link rel="stylesheet" href="<?php echo BASE_URL; ?>/assets/css/mobile-nav.css">
-    <link rel="stylesheet" href="<?php echo BASE_URL; ?>/assets/css/cookie-banner.css">
+        <!-- Theme Initialization -->
+        <script>
+            const BASE_URL = '<?php echo BASE_URL; ?>';
+            const currentTheme = localStorage.getItem('theme') || 'dark';
+            document.documentElement.setAttribute('data-theme', currentTheme);
+        </script>
 
-    <!-- Theme Initialization -->
-    <script>
-        const BASE_URL = '<?php echo BASE_URL; ?>';
-        const currentTheme = localStorage.getItem('theme') || 'dark';
-        document.documentElement.setAttribute('data-theme', currentTheme);
-    </script>
+        <!-- Performance Optimization: Async Fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="preload" as="style"
+            href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&family=Inter:wght@400;600;700&family=Space+Grotesk:wght@300;400;500;600;700&display=swap">
+        <link rel="stylesheet"
+            href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&family=Inter:wght@400;600;700&family=Space+Grotesk:wght@300;400;500;600;700&display=swap"
+            media="print" onload="this.media='all'">
+        <noscript>
+            <link rel="stylesheet"
+                href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&family=Inter:wght@400;600;700&family=Space+Grotesk:wght@300;400;500;600;700&display=swap">
+        </noscript>
+
+        <!-- Inline Critical CSS -->
+        <style>
+            <?php
+            $css_files = [
+                __DIR__ . '/../assets/css/main.css',
+                __DIR__ . '/../assets/css/mobile-nav.css',
+                __DIR__ . '/../assets/css/cookie-banner.css'
+            ];
+
+            foreach ($css_files as $css_file) {
+                if (file_exists($css_file)) {
+                    echo file_get_contents($css_file);
+                }
+            }
+            ?>
+        </style>
+        <!-- Removed blocking links -->
+    <?php endif; ?>
 </head>
 
 <body>
@@ -202,3 +289,6 @@ require_once __DIR__ . '/config.php';
                 </a>
             </nav>
         </header>
+
+        <!-- Main Landmark Start -->
+        <main id="main-content" role="main">

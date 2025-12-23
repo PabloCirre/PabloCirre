@@ -25,7 +25,7 @@ const cookieConsent = {
         banner.innerHTML = `
             <div class="cookie-banner-text">
                 Utilizamos cookies para mejorar tu experiencia. 
-                <a href="${BASE_URL}/paginas/Legal/cookies.php">Más información</a>
+                <a href="${BASE_URL}/paginas/Legal/cookies.php">Más información sobre nuestra Política de Cookies</a>
             </div>
             <div class="cookie-banner-actions">
                 <button class="cookie-btn cookie-btn-reject" onclick="cookieConsent.reject()">Rechazar</button>

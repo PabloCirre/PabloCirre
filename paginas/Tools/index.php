@@ -59,7 +59,7 @@ include '../../Components/header.php';
             <span class="panel-label">PERFORMANCE</span>
             <div class="light on"></div>
         </div>
-        <p style="font-size: 0.95rem; color: #444; line-height: 1.6; flex: 1; margin: 20px 0;">
+        <p style="font-size: 0.95rem; color: var(--text-color); line-height: 1.6; flex: 1; margin: 20px 0;">
             Optimizadas para velocidad. Respuestas en milisegundos, arquitectura escalable, uptime garantizado.
         </p>
     </div>
@@ -69,7 +69,7 @@ include '../../Components/header.php';
             <span class="panel-label">RELIABILITY</span>
             <div class="light on"></div>
         </div>
-        <p style="font-size: 0.95rem; color: #444; line-height: 1.6; flex: 1; margin: 20px 0;">
+        <p style="font-size: 0.95rem; color: var(--text-color); line-height: 1.6; flex: 1; margin: 20px 0;">
             99.9% de uptime, monitoreo 24/7, backups automáticos, soporte técnico dedicado.
         </p>
     </div>
@@ -79,7 +79,7 @@ include '../../Components/header.php';
             <span class="panel-label">INTEGRATION</span>
             <div class="light on"></div>
         </div>
-        <p style="font-size: 0.95rem; color: #444; line-height: 1.6; flex: 1; margin: 20px 0;">
+        <p style="font-size: 0.95rem; color: var(--text-color); line-height: 1.6; flex: 1; margin: 20px 0;">
             APIs REST simples, documentación completa, librerías en múltiples lenguajes, webhooks.
         </p>
     </div>
@@ -89,7 +89,7 @@ include '../../Components/header.php';
             <span class="panel-label">SECURITY</span>
             <div class="light on"></div>
         </div>
-        <p style="font-size: 0.95rem; color: #444; line-height: 1.6; flex: 1; margin: 20px 0;">
+        <p style="font-size: 0.95rem; color: var(--text-color); line-height: 1.6; flex: 1; margin: 20px 0;">
             Encriptación end-to-end, autenticación OAuth2, rate limiting, protección DDoS.
         </p>
     </div>
@@ -98,7 +98,7 @@ include '../../Components/header.php';
 <!-- CTA Section -->
 <div class="contact-section">
     <h2 style="font-size: 2rem; margin-bottom: 10px;">¿Necesitas una herramienta custom?</h2>
-    <p style="color: #666; margin-bottom: 30px;">Desarrollamos soluciones a medida para tu negocio.</p>
+    <p style="color: var(--text-secondary); margin-bottom: 30px;">Desarrollamos soluciones a medida para tu negocio.</p>
 
     <div style="max-width: 500px; margin: 0 auto;">
         <a href="<?php echo BASE_URL; ?>/paginas/Services/" class="btn-primary" style="margin-right: 10px;">Ver

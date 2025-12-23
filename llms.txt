@@ -1,0 +1,35 @@
+# Pablo Cirre - Developer Portfolio & Projects
+
+## Summary
+Personal website of Pablo Cirre, an experienced Web Developer, Big Data Consultant, and Educator based in Granada. Focus on PHP, Python, OpenData, and modern web interfaces.
+
+## Key Sections
+
+### Main
+- [Home](https://pablocirre.es/) - Overview of expertise (Big Data, Email Intelligence, Video).
+- [About Me](https://pablocirre.es/paginas/About-Me/) - Biography, skills, and background.
+- [Projects](https://pablocirre.es/paginas/Projects/) - Showcase of development work.
+- [Services](https://pablocirre.es/paginas/Services/) - Professional services offered.
+- [Knowledge](https://pablocirre.es/paginas/Knowledge/) - Technical skills and educational content.
+- [Experiences](https://pablocirre.es/paginas/Experiences/) - Professional journey.
+
+### OpenData
+- [OpenData Main](https://pablocirre.es/paginas/OpenData/) - Access to 1.4M+ business records.
+- [Central de Comunicación](https://pablocirre.es/paginas/OpenData/centraldecomunicacion/) - Data provider roadmap.
+- [Companies Data](https://pablocirre.es/paginas/OpenData/companiesdata/) - European business databases.
+- [UK Business](https://pablocirre.es/paginas/OpenData/ukbusiness/) - UK Data sets.
+
+### Tools
+- [Tools Index](https://pablocirre.es/paginas/Tools/) - Utility scripts and tools.
+- [Kaiju Email Verifier](https://pablocirre.es/paginas/Tools/KaijuEmailVerifier/) - Email verification service.
+
+### Creative Labs (UI/UX)
+- [Labs Index](https://pablocirre.es/Labs/) - Interactive web experiments to demonstrate UI/UX skills.
+- [Lab 1](https://pablocirre.es/Labs/Lab1/) - Experimental interface.
+- [Lab 2](https://pablocirre.es/Labs/Lab2/) - Modern design templates index (Neo-Brutalism, Glassmorphism, etc.).
+- [Lab 3](https://pablocirre.es/Labs/Lab3/) - Special creative lab.
+
+## Legal
+- [Legal Notice](https://pablocirre.es/paginas/Legal/aviso-legal.php)
+- [Privacy Policy](https://pablocirre.es/paginas/Legal/privacidad.php)
+- [Cookies](https://pablocirre.es/paginas/Legal/cookies.php)

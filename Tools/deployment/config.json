@@ -1,0 +1,26 @@
+{
+    "host": "ftp.servidor3000.lucusvirtual.es",
+    "user": "branvan3009@pablocirre.es",
+    "password": "l[RUfnlWz.z0",
+    "preserve": [
+        ".well-known",
+        ".ftpquota",
+        "users"
+    ],
+    "skip_upload": [
+        ".git",
+        ".gitignore",
+        ".DS_Store",
+        "__pycache__",
+        "python",
+        "scripts",
+        "docs",
+        "node_modules",
+        ".env",
+        "*.log",
+        "test_emails.csv",
+        "users",
+        "CopiaSegura",
+        "AP1S"
+    ]
+}

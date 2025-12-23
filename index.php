@@ -1,10 +1,9 @@
-<!-- CONTROL_TEST_999 -->
 <?php
 /**
  * Home - Pablo Cirre Portfolio
  */
 
-$page_title = "Pablo Cirre - Big Data, Email Intelligence, Formación & Experiencias en Vídeo";
+$page_title = "Pablo Cirre | Big Data, Formación & Videojuegos - Granada";
 $page_description = "Pablo Cirre - Experto en Big Data, Email Intelligence, Formación y Experiencias en Vídeo. Granada, España.";
 $page_keywords = "Big Data, verificador email, bases de datos empresas, formación desarrollo web, videojuegos indie, Granada, KaijuVerifier, Verne Games";
 
@@ -189,18 +188,43 @@ include 'Components/header.php';
     <h2 class="about-title">Una carrera definida por<br>la curiosidad y el código.</h2>
     <div class="about-text">
         <p>
-            Mi trayectoria comenzó en 1997 con experimentos en realidad virtual, mucho antes de que el metaverso
-            fuera una palabra de moda. Desde entonces, he fundado múltiples empresas, desde "Mensajería Low
-            Cost" hasta "Centraldecomunicacion.es".
+            Mi trayectoria profesional comenzó oficialmente en 1997, experimentando con las primeras versiones de
+            realidad virtual y VRML, mucho antes de que el concepto de metaverso se convirtiera en una tendencia global.
+            Esta fascinación temprana por la tecnología inmersiva sentó las bases de mi carrera. Desde entonces, he
+            fundado y dirigido múltiples empresas tecnológicas, destacando proyectos como "Mensajería Low Cost", que
+            revolucionó la logística para e-commerce, y "Centraldecomunicacion.es", que se ha consolidado como un
+            referente en datos B2B.
         </p>
         <p>
-            Combino experiencia técnica en Big Data y Arquitectura Web con pasión por la enseñanza y la
-            narración. Como profesor en la Cámara de Comercio, he formado a la próxima generación de
-            desarrolladores.
+            A lo largo de más de dos décadas, he combinado mi experiencia técnica en Big Data, Arquitectura Web y
+            Automatización de Procesos con una profunda pasión por la enseñanza y la comunicación. Como profesor titular
+            en programas de la Cámara de Comercio de Granada y otras instituciones, he tenido el privilegio de formar y
+            mentorizar a la próxima generación de desarrolladores y profesionales del marketing digital, compartiendo no
+            solo código, sino una visión estratégica del negocio digital.
         </p>
         <p>
-            Hoy divido mi tiempo entre optimizar infraestructura de datos y dirigir videojuegos narrativos en
-            Verne Games.
+            Actualmente, divido mi tiempo profesional entre dos grandes pasiones que convergen en la tecnología: la
+            optimización de infraestructuras de datos masivos (Big Data) para inteligencia de negocio, y la dirección
+            creativa y técnica de videojuegos narrativos en Verne Games. En Verne Games, exploramos nuevas formas de
+            contar historias a través de mecánicas de juego innovadoras, como en nuestro título "The Shape of Fantasy".
+        </p>
+        <p>
+            Esta dualidad entre la lógica estructurada de los datos y la creatividad narrativa de los videojuegos define
+            mi enfoque: técnico, riguroso, pero siempre centrado en la experiencia del usuario final.
+        </p>
+        <p>
+            En un entorno digital saturado, la diferencia entre un producto funcional y uno memorable reside en los
+            detalles. Ya sea optimizando una consulta SQL para que se ejecute en milisegundos o diseñando la curva de
+            aprendizaje de un videojuego, mi compromiso es con la excelencia técnica y estética. Creo firmemente que la
+            tecnología debe ser invisible, sirviendo como un facilitador transparente para las necesidades humanas, y
+            este principio guía cada línea de código que escribo y cada sistema que diseño.
+        </p>
+        <p>
+            La formación continua es otro pilar fundamental de mi filosofía. En un sector donde las herramientas cambian
+            cada seis meses, mantenerse relevante requiere una curiosidad insaciable. Por ello, no solo aplico las
+            últimas tecnologías en mis proyectos, sino que dedico gran parte de mi tiempo a investigar, probar y
+            documentar nuevos frameworks y metodologías en mi sección de 'Knowledge' y 'Labs', contribuyendo así al
+            conocimiento colectivo de la comunidad de desarrolladores.
         </p>
         <a href="<?php echo BASE_URL; ?>/paginas/About-Me/" class="link-secondary">Leer Biografía Completa</a>
     </div>
@@ -209,11 +233,14 @@ include 'Components/header.php';
 <!-- Contact Section -->
 <div class="contact-section">
     <h2 style="font-size: 2rem; margin-bottom: 10px;">¿Listo para colaborar?</h2>
-    <p style="color: #666; margin-bottom: 30px;">Disponible para consultoría en arquitectura Big Data y Diseño
-        de Videojuegos.</p>
+    <p style="color: var(--text-secondary); margin-bottom: 30px;">Disponible para consultoría en arquitectura Big Data y
+        Diseño
+        de Videojuegos. Cuéntame tu proyecto.</p>
 
     <form class="contact-form" action="<?php echo BASE_URL; ?>/paginas/About-Me/" method="get">
-        <input type="email" name="email" placeholder="introduce_tu_email@dominio.com" required>
+        <label for="contact-email" class="sr-only">Tu Email</label>
+        <input type="email" id="contact-email" name="email" placeholder="introduce_tu_email@dominio.com"
+            aria-label="Tu dirección de correo electrónico" required>
         <button type="submit" class="btn-primary">Iniciar Contacto</button>
     </form>
 </div>

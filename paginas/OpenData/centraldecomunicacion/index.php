@@ -6,7 +6,7 @@
  */
 
 // SEO Metadata
-$page_title = "Roadmap 2010–2026 · Del centro de Granada al Big Data mundial | Centraldecomunicacion.es";
+$page_title = "Roadmap 2026: Big Data desde Granada | Centraldecomunicacion";
 $page_description = "Roadmap estratégico 2026 y cronología de innovación en datos B2B. Comparativa de proveedores de datos: Centraldecomunicacion vs Informa vs Axesor.";
 $page_keywords = "roadmap big data, comparativa base de datos empresas, centraldecomunicacion vs informa, kaiju verifier";
 
@@ -343,7 +343,7 @@ include '../../../Components/header.php';
 <!-- Lightbox Modal -->
 <div id="lightbox-modal" class="lightbox" onclick="closeLightbox()">
     <span class="close-lightbox">&times;</span>
-    <img class="lightbox-content" id="lightbox-img">
+    <img class="lightbox-content" id="lightbox-img" alt="Vista ampliada">
 </div>
 
 <script>

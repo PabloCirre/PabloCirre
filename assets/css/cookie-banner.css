@@ -35,7 +35,8 @@
 
 .cookie-banner-text a {
     color: var(--accent-color);
-    text-decoration: none;
+    text-decoration: underline;
+    font-weight: bold;
 }
 
 .cookie-banner-text a:hover {

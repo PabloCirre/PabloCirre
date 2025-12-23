@@ -65,7 +65,7 @@ include '../../Components/header.php';
                 <span class="pm-value">1-2 sem</span>
             </div>
         </div>
-        <a href="<?php echo BASE_URL; ?>/Tools/verificador-email/" class="project-link">Ver Tool →</a>
+        <a href="<?php echo BASE_URL; ?>/paginas/Tools/KaijuEmailVerifier/" class="project-link">Ver Tool →</a>
     </div>
 
     <div class="project-card">
@@ -156,16 +156,16 @@ include '../../Components/header.php';
 <div class="metrics-grid" style="grid-template-columns: repeat(3, 1fr); margin-bottom: 120px;">
     <div class="data-panel">
         <div class="panel-header">
-            <span class="panel-label">PLAN_BÁSICO</span>
+            <span class="panel-label">BASIC</span>
             <div class="light on"></div>
         </div>
         <div style="flex: 1; padding: 20px 0;">
             <div class="metric-value" style="font-size: 2rem;">500€</div>
             <div class="metric-desc">/ mes</div>
-            <ul style="margin-top: 20px; font-size: 0.9rem; color: #555; list-style: none;">
+            <ul style="margin-top: 20px; font-size: 0.9rem; color: var(--text-secondary); list-style: none;">
                 <li style="margin-bottom: 8px;">✓ 10 horas consultoría/mes</li>
                 <li style="margin-bottom: 8px;">✓ Email y chat support</li>
-                <li style="margin-bottom: 8px;">✓ Respuesta <48h< /li>
+                <li style="margin-bottom: 8px;">✓ Respuesta &lt; 48h</li>
                 <li style="margin-bottom: 8px;">✓ Documentación incluida</li>
             </ul>
         </div>
@@ -176,16 +176,16 @@ include '../../Components/header.php';
 
     <div class="data-panel" style="border-color: var(--accent-color); border-width: 2px;">
         <div class="panel-header">
-            <span class="panel-label">PLAN_PRO</span>
+            <span class="panel-label">PRO</span>
             <div class="light on"></div>
         </div>
         <div style="flex: 1; padding: 20px 0;">
             <div class="metric-value" style="font-size: 2rem; color: var(--accent-color);">1.200€</div>
             <div class="metric-desc">/ mes</div>
-            <ul style="margin-top: 20px; font-size: 0.9rem; color: #555; list-style: none;">
+            <ul style="margin-top: 20px; font-size: 0.9rem; color: var(--text-secondary); list-style: none;">
                 <li style="margin-bottom: 8px;">✓ 25 horas consultoría/mes</li>
                 <li style="margin-bottom: 8px;">✓ Soporte prioritario</li>
-                <li style="margin-bottom: 8px;">✓ Respuesta <24h< /li>
+                <li style="margin-bottom: 8px;">✓ Respuesta &lt; 24h</li>
                 <li style="margin-bottom: 8px;">✓ Videollamadas incluidas</li>
                 <li style="margin-bottom: 8px;">✓ Reporting mensual</li>
             </ul>
@@ -197,16 +197,16 @@ include '../../Components/header.php';
 
     <div class="data-panel">
         <div class="panel-header">
-            <span class="panel-label">PLAN_ENTERPRISE</span>
+            <span class="panel-label">ENTERPRISE</span>
             <div class="light on"></div>
         </div>
         <div style="flex: 1; padding: 20px 0;">
             <div class="metric-value" style="font-size: 2rem;">Custom</div>
             <div class="metric-desc">contactar</div>
-            <ul style="margin-top: 20px; font-size: 0.9rem; color: #555; list-style: none;">
+            <ul style="margin-top: 20px; font-size: 0.9rem; color: var(--text-secondary); list-style: none;">
                 <li style="margin-bottom: 8px;">✓ Horas ilimitadas</li>
                 <li style="margin-bottom: 8px;">✓ Soporte 24/7</li>
-                <li style="margin-bottom: 8px;">✓ Respuesta <2h< /li>
+                <li style="margin-bottom: 8px;">✓ Respuesta &lt; 2h</li>
                 <li style="margin-bottom: 8px;">✓ Equipo dedicado</li>
                 <li style="margin-bottom: 8px;">✓ SLA personalizado</li>
                 <li style="margin-bottom: 8px;">✓ Desarrollo prioritario</li>
@@ -244,7 +244,8 @@ include '../../Components/header.php';
 <!-- CTA -->
 <div class="contact-section">
     <h2 style="font-size: 2rem; margin-bottom: 10px;">¿Listo para empezar tu proyecto?</h2>
-    <p style="color: #666; margin-bottom: 30px;">Agenda una consultoría inicial gratuita de 30 minutos.</p>
+    <p style="color: var(--text-secondary); margin-bottom: 30px;">Agenda una consultoría inicial gratuita de 30 minutos.
+    </p>
 
     <form class="contact-form" action="<?php echo BASE_URL; ?>/paginas/About-Me/" method="get">
         <input type="email" name="email" placeholder="tu_email@empresa.com" required>

@@ -18,11 +18,11 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     });
 
-    // Animate indicator lights
+    // Animate indicator lights (Class-based to avoid Reflow)
     const lights = document.querySelectorAll('.light.on');
     lights.forEach(light => {
         setInterval(() => {
-            light.style.opacity = light.style.opacity === '0.7' ? '1' : '0.7';
+            light.classList.toggle('dimmed');
         }, 1500);
     });
 
@@ -42,6 +42,38 @@ document.addEventListener('DOMContentLoaded', function () {
     console.log('%c [✓] Big Data Module: ONLINE ', 'color: #00ccaa; font-family: monospace;');
     console.log('%c [✓] Email Verifier: ACTIVE ', 'color: #00ccaa; font-family: monospace;');
     console.log('%c [✓] Game Dev Engine: RUNNING ', 'color: #00ccaa; font-family: monospace;');
+
+    // Timeline Pulse Logic: Activate point closest to screen center
+    const timelinePoints = document.querySelectorAll('.timeline-point');
+    if (timelinePoints.length > 0) {
+        const updateTimeline = () => {
+            const centerY = window.innerHeight / 2;
+            let closestPoint = null;
+            let minDistance = Infinity;
+
+            timelinePoints.forEach(point => {
+                const rect = point.getBoundingClientRect();
+                const pointCenter = rect.top + (rect.height / 2);
+                const distance = Math.abs(centerY - pointCenter);
+
+                if (distance < minDistance) {
+                    minDistance = distance;
+                    closestPoint = point;
+                }
+                point.classList.remove('active');
+            });
+
+            // Increased threshold to 350px to avoid "dead zones"
+            // and ensure visual continuity
+            if (closestPoint && minDistance < 350) {
+                closestPoint.classList.add('active');
+            }
+        };
+
+        // Use passive scroll listener for performance
+        window.addEventListener('scroll', updateTimeline, { passive: true });
+        updateTimeline(); // Initial check
+    }
 });
 
 // Theme Toggle Function

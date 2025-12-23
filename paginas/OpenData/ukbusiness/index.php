@@ -213,7 +213,8 @@ include '../../../Components/header.php';
 <!-- CTA Section -->
 <div class="contact-section">
     <h2 style="font-size: 2rem; margin-bottom: 10px;">¿Necesitas datos de UK?</h2>
-    <p style="color: #666; margin-bottom: 30px;">Demo gratuita disponible para verificar la calidad.</p>
+    <p style="color: var(--text-secondary); margin-bottom: 30px;">Demo gratuita disponible para verificar la calidad.
+    </p>
 
     <div style="max-width: 500px; margin: 0 auto;">
         <a href="https://ukbusinessdatabases.club" target="_blank" rel="noopener" class="btn-primary"

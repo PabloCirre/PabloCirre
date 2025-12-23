@@ -3,7 +3,7 @@
  * OpenData - Big Data & Bases de Datos Empresas
  */
 
-$page_title = "OpenData Empresas España | 1.4M Base de Datos B2B - Pablo Cirre";
+$page_title = "OpenData Empresas España: 1.4M Datos B2B - Pablo Cirre";
 $page_description = "Base de datos de 1.4 millones de empresas en España. OpenData empresarial, sector turismo B2B, 15+ países europeos. Centraldecomunicacion.es";
 $page_keywords = "base de datos empresas españa, opendata empresas, datos abiertos empresariales, 1.4 millones empresas, base datos turismo b2b, centraldecomunicacion";
 
@@ -545,10 +545,12 @@ include '../../Components/header.php';
     <!-- CTA Section -->
     <div class="contact-section">
         <h2 style="font-size: 2rem; margin-bottom: 10px;">¿Necesitas acceso a los datos?</h2>
-        <p style="color: #666; margin-bottom: 30px;">Solicita una demo o consulta nuestros planes empresariales.</p>
+        <p style="color: var(--text-secondary); margin-bottom: 30px;">Solicita una demo o consulta nuestros planes
+            empresariales.</p>
 
         <div style="max-width: 500px; margin: 0 auto;">
-            <a href="<?php echo BASE_URL; ?>/paginas/Services/" class="btn-primary" style="margin-right: 10px;">Ver Planes</a>
+            <a href="<?php echo BASE_URL; ?>/paginas/Services/" class="btn-primary" style="margin-right: 10px;">Ver
+                Planes</a>
             <a href="<?php echo BASE_URL; ?>/paginas/About-Me/" class="link-secondary">Contactar</a>
         </div>
     </div>

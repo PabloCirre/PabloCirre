@@ -256,7 +256,7 @@ include '../../Components/header.php';
             <span class="panel-label">ALUMNO_01</span>
             <div class="light on"></div>
         </div>
-        <p style="font-size: 0.95rem; color: #444; line-height: 1.6; flex: 1;">
+        <p style="font-size: 0.95rem; color: var(--text-color); line-height: 1.6; flex: 1;">
             "El curso de WordPress me permitió lanzar mi propio negocio. Pablo explica con claridad y siempre está
             disponible para resolver dudas."
         </p>
@@ -271,7 +271,7 @@ include '../../Components/header.php';
             <span class="panel-label">ALUMNO_02</span>
             <div class="light on"></div>
         </div>
-        <p style="font-size: 0.95rem; color: #444; line-height: 1.6; flex: 1;">
+        <p style="font-size: 0.95rem; color: var(--text-color); line-height: 1.6; flex: 1;">
             "Contenido actualizado, ejemplos prácticos y un profesor que sabe transmitir. Conseguí trabajo como
             desarrollador frontend gracias al curso."
         </p>
