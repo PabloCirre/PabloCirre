@@ -3,19 +3,19 @@
  * Tools - Herramientas y Utilidades
  */
 
-$page_title = "Tools | Herramientas Profesionales - Pablo Cirre";
-$page_description = "Herramientas profesionales para desarrolladores y marketers. Kaiju Bulk Email Verifier email verification, análisis de datos, y más.";
-$page_keywords = "herramientas desarrollo, verificador email, tools profesionales, Kaiju Bulk Email Verifier, utilidades desarrollador";
+$page_title = "Kaiju Tools | Herramientas de Ingeniería SEO - Pablo Cirre";
+$page_description = "Kaiju Tools: Suite de ingeniería SEO y automatización. Kaiju Translator, Bulk Email Verifier, y utilidades de alto rendimiento.";
+$page_keywords = "kaiju tools, kaiju translator, verificador email, seo engineering, herramientas pablo cirre";
 
 include '../../Components/header.php';
 ?>
 
 <!-- Hero Section Tools -->
 <section class="hero-section" style="padding: 80px 0;">
-    <h1 class="hero-title" style="font-size: 4rem;">Tools.<br>Herramientas Profesionales.</h1>
+    <h1 class="hero-title" style="font-size: 4rem;">Kaiju Tools.<br>Ingeniería SEO & Automatización.</h1>
     <p class="hero-subtitle">
-        Suite de herramientas profesionales para desarrolladores, marketers y empresas. SaaS, APIs y utilidades de alto
-        rendimiento.
+        Suite de herramientas de alto rendimiento para desarrolladores y equipos de crecimiento.
+        Soluciones "Zero-Rewrite" diseñadas para escalar.
     </p>
 </section>
 
@@ -24,25 +24,51 @@ include '../../Components/header.php';
 
 <div class="projects-grid" style="margin-bottom: 120px;">
 
+    <!-- Kaiju Translator -->
+    <div class="project-card">
+        <span class="project-tag" style="background: var(--accent-color); color: white;">NEW / AI</span>
+        <h3 class="project-title">Kaiju Translator</h3>
+        <p class="project-desc">
+            Motor de localización PHP "Zero-Rewrite". Genera espejos SEO físicos usando LLMs (OpenAI/DeepSeek).
+            Internacionalización instantánea sin deuda técnica.
+        </p>
+        <div class="project-metrics">
+            <div class="p-metric">
+                <span class="pm-label">Arquitectura</span>
+                <span class="pm-value">SEO Mirror</span>
+            </div>
+            <div class="p-metric">
+                <span class="pm-label">AI Engine</span>
+                <span class="pm-value">Multi-LLM</span>
+            </div>
+            <div class="p-metric">
+                <span class="pm-label">Setup</span>
+                <span class="pm-value">5 min</span>
+            </div>
+        </div>
+        <a href="<?php echo BASE_URL; ?>/paginas/Tools/KaijuTranslator/" class="project-link">Explorar Tool →</a>
+    </div>
+
+    <!-- Kaiju Bulk Email Verifier -->
     <div class="project-card">
         <span class="project-tag">SAAS / API</span>
-        <h3 class="project-title">Kaiju Bulk Email Verifier</h3>
+        <h3 class="project-title">Kaiju Email Verifier</h3>
         <p class="project-desc">
-            API de verificación de email de alto rendimiento. Valida emails en 50ms con 99.8% de precisión. Limpia tus
-            listas y mejora deliverability.
+            API de verificación de email de alto rendimiento. Valida emails en 50ms con 99.8% de precisión.
+            Limpia tus listas y mejora deliverability.
         </p>
         <div class="project-metrics">
             <div class="p-metric">
                 <span class="pm-label">Plataforma</span>
-                <span class="pm-value">Web/Desk</span>
+                <span class="pm-value">SaaS</span>
             </div>
             <div class="p-metric">
                 <span class="pm-label">Precisión</span>
                 <span class="pm-value">99.8%</span>
             </div>
             <div class="p-metric">
-                <span class="pm-label">Rating</span>
-                <span class="pm-value">4.9</span>
+                <span class="pm-label">Status</span>
+                <span class="pm-value">Live</span>
             </div>
         </div>
         <a href="<?php echo BASE_URL; ?>/paginas/Tools/KaijuEmailVerifier/" class="project-link">Acceder →</a>

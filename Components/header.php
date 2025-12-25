@@ -248,7 +248,7 @@ require_once __DIR__ . '/config.php';
                 </div>
                 <a href="<?php echo BASE_URL; ?>/paginas/Tools/"
                     class="<?php echo $current_page == 'Tools' ? 'active' : ''; ?>">
-                    <span class="nav-text">Tools</span>
+                    <span class="nav-text">Kaiju Tools</span>
                 </a>
                 <a href="<?php echo BASE_URL; ?>/paginas/Experiences/"
                     class="<?php echo $current_page == 'Experiences' ? 'active' : ''; ?>">
