@@ -1,0 +1,197 @@
+/* Sitemap Extractor Custom Styles */
+
+.lab-container {
+    grid-column: 1 / -1;
+    padding: 40px 0;
+    width: 100%;
+}
+
+.extractor-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.full-width {
+    grid-column: 1 / -1;
+}
+
+/* Reusing existing data-panel aesthetic check header.php/main.css if possible */
+.data-panel {
+    background: var(--surface-color);
+    border: 1px solid var(--border-color);
+    padding: 20px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.panel-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 10px;
+}
+
+.panel-label {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: var(--text-secondary);
+    letter-spacing: 1px;
+}
+
+.light {
+    width: 8px;
+    height: 8px;
+    background: #333;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+}
+
+.light.on {
+    background: var(--accent-color);
+    box-shadow: 0 0 10px var(--accent-color);
+}
+
+.light.processing {
+    background: #ffaa00;
+    box-shadow: 0 0 10px #ffaa00;
+    animation: blink 1s infinite;
+}
+
+.light.error {
+    background: #ff4444;
+    box-shadow: 0 0 10px #ff4444;
+}
+
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.3; }
+}
+
+.metric-value {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--text-color);
+}
+
+.metric-desc {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+}
+
+.panel-footer {
+    border-top: 1px solid var(--border-color);
+    padding-top: 10px;
+    display: flex;
+    justify-content: space-between;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.65rem;
+    color: var(--text-tertiary);
+}
+
+/* Input Styles */
+.input-group {
+    display: flex;
+    gap: 10px;
+}
+
+input[type="url"] {
+    flex: 1;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid var(--border-color);
+    padding: 12px 15px;
+    color: var(--text-color);
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.9rem;
+}
+
+input[type="url"]:focus {
+    outline: none;
+    border-color: var(--accent-color);
+}
+
+button {
+    background: var(--accent-color);
+    color: #000;
+    border: none;
+    padding: 12px 20px;
+    font-family: 'IBM Plex Mono', monospace;
+    font-weight: 700;
+    font-size: 0.85rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+button:hover:not(:disabled) {
+    background: var(--text-color);
+    color: var(--surface-color);
+}
+
+button:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+    filter: grayscale(1);
+}
+
+.btn-secondary {
+    background: transparent;
+    border: 1px solid var(--border-color);
+    color: var(--text-color);
+}
+
+.download-buttons {
+    display: flex;
+    gap: 10px;
+}
+
+/* Console Style */
+.console-view {
+    background: rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    height: 200px;
+    overflow-y: auto;
+    padding: 15px;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.8rem;
+    line-height: 1.6;
+    color: #00ff00; /* Classic Terminal Green */
+    text-shadow: 0 0 5px rgba(0, 255, 0, 0.2);
+}
+
+.console-view .line {
+    margin-bottom: 4px;
+}
+
+.console-view .line::before {
+    content: '> ';
+    opacity: 0.5;
+}
+
+.console-view .line.error { color: #ff4444; }
+.console-view .line.success { color: #00ffaa; }
+.console-view .line.info { color: #888; }
+
+.back-nav {
+    padding: 20px 0;
+    text-align: right;
+}
+
+.back-nav a {
+    text-decoration: none;
+    color: var(--text-secondary);
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.9rem;
+    transition: color 0.3s ease;
+}
+
+.back-nav a:hover {
+    color: var(--accent-color);
+}
