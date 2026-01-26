@@ -46,6 +46,138 @@
         <priority>0.7</priority>
     </url>
 
+    <!-- Contact -->
+    <url>
+        <loc>https://pablocirre.es/paginas/Contact/</loc>
+        <lastmod>2026-01-26</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+
+    <!-- Docencia Section -->
+    <url>
+        <loc>https://pablocirre.es/paginas/Docencia/</loc>
+        <lastmod>2026-01-26</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://pablocirre.es/paginas/Docencia/curso-antigravity-ia/</loc>
+        <lastmod>2026-01-26</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://pablocirre.es/paginas/Docencia/curso-business-intelligence/</loc>
+        <lastmod>2026-01-26</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://pablocirre.es/paginas/Docencia/curso-email-marketing/</loc>
+        <lastmod>2026-01-26</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://pablocirre.es/paginas/Docencia/curso-seo-semrush/</loc>
+        <lastmod>2026-01-26</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://pablocirre.es/paginas/Docencia/curso-unity-vr-arquitectura-industria/</loc>
+        <lastmod>2026-01-26</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://pablocirre.es/paginas/Docencia/curso-woocommerce/</loc>
+        <lastmod>2026-01-26</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://pablocirre.es/paginas/Docencia/curso-wordpress/</loc>
+        <lastmod>2026-01-26</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+
+    <!-- Projects (Individual) -->
+    <url>
+        <loc>https://pablocirre.es/paginas/Projects/CentralDeComunicacion/</loc>
+        <lastmod>2026-01-26</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://pablocirre.es/paginas/Projects/asesoriadigital/</loc>
+        <lastmod>2026-01-26</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://pablocirre.es/paginas/Projects/avalonoposiciones/</loc>
+        <lastmod>2026-01-26</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://pablocirre.es/paginas/Projects/cruzapuentes/</loc>
+        <lastmod>2026-01-26</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://pablocirre.es/paginas/Projects/dehesadebular/</loc>
+        <lastmod>2026-01-26</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://pablocirre.es/paginas/Projects/deportenutricion/</loc>
+        <lastmod>2026-01-26</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://pablocirre.es/paginas/Projects/europubhealth/</loc>
+        <lastmod>2026-01-26</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://pablocirre.es/paginas/Projects/granadasmile/</loc>
+        <lastmod>2026-01-26</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://pablocirre.es/paginas/Projects/igualdadextremadura/</loc>
+        <lastmod>2026-01-26</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://pablocirre.es/paginas/Projects/lacomandarural/</loc>
+        <lastmod>2026-01-26</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://pablocirre.es/paginas/Projects/mapamediacion/</loc>
+        <lastmod>2026-01-26</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://pablocirre.es/paginas/Projects/plantabaja/</loc>
+        <lastmod>2026-01-26</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+
     <!-- OpenData Section -->
     <url>
         <loc>https://pablocirre.es/paginas/OpenData/</loc>
@@ -136,6 +268,19 @@
         <lastmod>2025-12-20</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.5</priority>
+    </url>
+
+    <url>
+        <loc>https://pablocirre.es/Labs/Lab4_Analytics/</loc>
+        <lastmod>2026-01-26</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
+    </url>
+    <url>
+        <loc>https://pablocirre.es/Labs/Lab5_SitemapExtractor/</loc>
+        <lastmod>2026-01-26</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
     </url>
 
     <!-- Templates (Sub-Labs) -->
