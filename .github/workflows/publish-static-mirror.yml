@@ -32,6 +32,7 @@ jobs:
         run: |
           python Tools/static_mirror/build_pages.py \
             --base-url https://pablocirre.github.io \
+            --canonical-base-url https://pablocirre.es \
             --output "$RUNNER_TEMP/PabloCirre.github.io"
 
       - name: Publish to PabloCirre.github.io

@@ -5,10 +5,12 @@ Builds a static, indexable mirror of the PHP site for `https://pablocirre.github
 ## Local build
 
 ```powershell
-python Tools/static_mirror/build_pages.py --base-url https://pablocirre.github.io --output ..\PabloCirre.github.io
+python Tools/static_mirror/build_pages.py --base-url https://pablocirre.github.io --canonical-base-url https://pablocirre.es --output ..\PabloCirre.github.io
 ```
 
 The builder starts a temporary local PHP server, reads `sitemap_index.xml`, renders every public sitemap URL, rewrites PHP/query URLs to clean static paths, copies only public assets, writes `.nojekyll`, and validates the output.
+
+By default, the mirror is published at `https://pablocirre.github.io/` but declares `https://pablocirre.es/` as the canonical site in SEO identity tags. This tells search engines that GitHub Pages is the backup copy and `pablocirre.es` is the preferred version.
 
 ## Publish model
 

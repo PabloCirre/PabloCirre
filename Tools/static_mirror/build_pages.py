@@ -552,12 +552,83 @@ def fix_project_breadcrumb_jsonld(text: str, route: Route, base_url: str) -> str
     return text
 
 
-def postprocess_html(text: str, route: Route, base_url: str) -> str:
+SEO_IDENTITY_TAG_RE = re.compile(r"<(?:link|meta)\b[^>]+>", re.IGNORECASE)
+JSON_LD_RE = re.compile(
+    r"(<script\b[^>]*\btype=[\"']application/ld\+json[\"'][^>]*>)(.*?)(</script>)",
+    re.IGNORECASE | re.DOTALL,
+)
+
+
+def is_seo_identity_tag(tag: str) -> bool:
+    lower = tag.lower()
+    if re.search(r"\brel\s*=\s*['\"]canonical['\"]", lower):
+        return True
+    if re.search(r"\brel\s*=\s*['\"]alternate['\"]", lower) and "hreflang" in lower:
+        return True
+    if re.search(r"\bproperty\s*=\s*['\"]og:url['\"]", lower):
+        return True
+    return bool(re.search(r"\bname\s*=\s*['\"]twitter:url['\"]", lower))
+
+
+def canonical_identity_url(value: str, canonical_base_url: str) -> str:
+    decoded = html.unescape(value.strip())
+    parsed = urllib.parse.urlparse(decoded)
+    path = parsed.path or "/"
+    if path.startswith(LOCAL_BASE_PREFIX):
+        path = path[len(LOCAL_BASE_PREFIX) :] or "/"
+    source_like = urllib.parse.urlunparse(("https", "pablocirre.es", path, "", parsed.query, ""))
+    static_path = page_path_from_url(source_like)
+    return absolute_static_url(canonical_base_url, static_path)
+
+
+def rewrite_seo_identity_tags(text: str, base_url: str, canonical_base_url: str) -> str:
+    if canonical_base_url.rstrip("/") == base_url.rstrip("/"):
+        return text
+
+    def replace_tag(match: re.Match[str]) -> str:
+        tag = match.group(0)
+        if not is_seo_identity_tag(tag):
+            return tag
+
+        def replace_url(attr_match: re.Match[str]) -> str:
+            attr = attr_match.group("attr")
+            quote = attr_match.group("quote")
+            value = attr_match.group("value")
+            rewritten = canonical_identity_url(value, canonical_base_url)
+            return f"{attr}={quote}{html.escape(rewritten, quote=True)}{quote}"
+
+        return re.sub(
+            r"\b(?P<attr>href|content)\s*=\s*(?P<quote>[\"'])(?P<value>[^\"']+)(?P=quote)",
+            replace_url,
+            tag,
+            count=1,
+            flags=re.IGNORECASE,
+        )
+
+    return SEO_IDENTITY_TAG_RE.sub(replace_tag, text)
+
+
+def rewrite_jsonld_identity_urls(text: str, base_url: str, canonical_base_url: str) -> str:
+    if canonical_base_url.rstrip("/") == base_url.rstrip("/"):
+        return text
+
+    base = base_url.rstrip("/")
+    canonical = canonical_base_url.rstrip("/")
+
+    def replace_block(match: re.Match[str]) -> str:
+        return match.group(1) + match.group(2).replace(base, canonical) + match.group(3)
+
+    return JSON_LD_RE.sub(replace_block, text)
+
+
+def postprocess_html(text: str, route: Route, base_url: str, canonical_base_url: str) -> str:
     text = rewrite_absolute_source_urls(text, base_url)
     text = rewrite_html_attrs(text, base_url)
     text = rewrite_quoted_internal_paths(text, base_url)
     text = rewrite_common_dynamic_paths(text, base_url)
     text = fix_project_breadcrumb_jsonld(text, route, base_url)
+    text = rewrite_seo_identity_tags(text, base_url, canonical_base_url)
+    text = rewrite_jsonld_identity_urls(text, base_url, canonical_base_url)
     text = remove_local_debug_links(text)
     text = clean_i18n_artifacts(text)
     text = text.replace(f"const BASE_URL = '{LOCAL_BASE_PREFIX}';", f"const BASE_URL = '{base_url_path(base_url)}';")
@@ -647,7 +718,7 @@ def rewrite_copied_text_files(output_dir: Path, base_url: str) -> None:
             path.write_text(rewritten, encoding="utf-8")
 
 
-def write_route(route: Route, timeout: int, base_url: str) -> dict:
+def write_route(route: Route, timeout: int, base_url: str, canonical_base_url: str) -> dict:
     status, body, content_type = fetch_url(route.local_url, timeout)
     ok = 200 <= status < 300 and "html" in content_type.lower()
     result = {
@@ -663,11 +734,11 @@ def write_route(route: Route, timeout: int, base_url: str) -> dict:
         result["error"] = f"Expected HTML 2xx, got status={status} content_type={content_type!r}"
         return result
     route.output_file.parent.mkdir(parents=True, exist_ok=True)
-    route.output_file.write_text(postprocess_html(body, route, base_url), encoding="utf-8")
+    route.output_file.write_text(postprocess_html(body, route, base_url, canonical_base_url), encoding="utf-8")
     return result
 
 
-def write_404(output_dir: Path, port: int, timeout: int, base_url: str) -> dict:
+def write_404(output_dir: Path, port: int, timeout: int, base_url: str, canonical_base_url: str) -> dict:
     local_url = f"http://127.0.0.1:{port}/__static_mirror_missing__/"
     route = Route(
         source_url=SOURCE_BASE_URL + "/__static_mirror_missing__/",
@@ -676,11 +747,17 @@ def write_404(output_dir: Path, port: int, timeout: int, base_url: str) -> dict:
         output_file=output_dir / "404.html",
     )
     status, body, content_type = fetch_url(local_url, timeout)
-    route.output_file.write_text(postprocess_html(body, route, base_url), encoding="utf-8")
+    route.output_file.write_text(postprocess_html(body, route, base_url, canonical_base_url), encoding="utf-8")
     return {"status": status, "content_type": content_type, "ok": status == 404}
 
 
-def validate_output(output_dir: Path, routes: list[Route], build_results: list[dict], base_url: str) -> dict:
+def validate_output(
+    output_dir: Path,
+    routes: list[Route],
+    build_results: list[dict],
+    base_url: str,
+    canonical_base_url: str,
+) -> dict:
     errors: list[str] = []
     warnings: list[str] = []
 
@@ -708,12 +785,13 @@ def validate_output(output_dir: Path, routes: list[Route], build_results: list[d
     copied_forbidden = [
         str(path.relative_to(output_dir))
         for path in output_dir.rglob("*")
-        if any(part in forbidden_segments for part in path.relative_to(output_dir).parts)
+        if path.relative_to(output_dir).parts[:1] != (".git",)
+        and any(part in forbidden_segments for part in path.relative_to(output_dir).parts)
     ]
     if copied_forbidden:
         errors.append(f"Forbidden local/private paths copied: {copied_forbidden[:8]}")
 
-    canonical_original = []
+    canonical_mismatches = []
     internal_php_links = []
     php_runtime_errors = []
     i18n_artifacts = []
@@ -724,8 +802,14 @@ def validate_output(output_dir: Path, routes: list[Route], build_results: list[d
             continue
         text = path.read_text(encoding="utf-8", errors="ignore")
         rel = str(path.relative_to(output_dir))
-        if re.search(r'<link\s+rel=["\']canonical["\']\s+href=["\']https://pablocirre\.es', text, re.IGNORECASE):
-            canonical_original.append(rel)
+        canonical_matches = re.findall(
+            r'<link\b(?=[^>]*\brel=["\']canonical["\'])[^>]*\bhref=["\']([^"\']+)["\']',
+            text,
+            re.IGNORECASE,
+        )
+        for href in canonical_matches:
+            if not href.startswith(canonical_base_url.rstrip("/") + "/"):
+                canonical_mismatches.append({"file": rel, "href": href})
         if re.search(
             r'(?:\b(?:href|src|action)=["\'][^"\']*|https://pablocirre\.github\.io/|["\']/?)(?:en/)?paginas/[^"\'<>\s]*\.php',
             text,
@@ -745,8 +829,8 @@ def validate_output(output_dir: Path, routes: list[Route], build_results: list[d
                 generic_marker_hits.append({"file": rel, "marker": marker})
                 break
 
-    if canonical_original:
-        errors.append(f"Canonical tags still point at pablocirre.es: {canonical_original[:8]}")
+    if canonical_mismatches:
+        errors.append(f"Canonical tags do not point at {canonical_base_url}: {canonical_mismatches[:8]}")
     if internal_php_links:
         errors.append(f"Internal .php links remain in generated output: {internal_php_links[:8]}")
     if php_runtime_errors:
@@ -779,6 +863,7 @@ def validate_output(output_dir: Path, routes: list[Route], build_results: list[d
 
 def build(args: argparse.Namespace) -> int:
     base_url = normalize_base_url(args.base_url)
+    canonical_base_url = normalize_base_url(args.canonical_base_url)
     output_dir = Path(args.output).resolve()
     safe_clean_output_dir(output_dir)
 
@@ -792,18 +877,19 @@ def build(args: argparse.Namespace) -> int:
         try:
             routes = [route_for_source(url, output_dir, port) for url in public_urls]
             copied = copy_public_assets(output_dir, base_url)
+            rewrite_copied_text_files(output_dir, base_url)
             results = []
             for index, route in enumerate(routes, start=1):
                 print(f"[{index:03d}/{len(routes):03d}] {route.source_url} -> {route.static_path}")
-                results.append(write_route(route, args.timeout, base_url))
-            not_found = write_404(output_dir, port, args.timeout, base_url)
+                results.append(write_route(route, args.timeout, base_url, canonical_base_url))
+            not_found = write_404(output_dir, port, args.timeout, base_url, canonical_base_url)
         finally:
             stop_php_server(proc)
 
-    rewrite_copied_text_files(output_dir, base_url)
-    validation = validate_output(output_dir, routes, results, base_url)
+    validation = validate_output(output_dir, routes, results, base_url, canonical_base_url)
     report = {
         "base_url": base_url,
+        "canonical_base_url": canonical_base_url,
         "output_dir": str(output_dir),
         "source_url_count": len(public_urls),
         "copied": copied,
@@ -826,6 +912,11 @@ def build(args: argparse.Namespace) -> int:
 def parse_args(argv: list[str]) -> argparse.Namespace:
     parser = argparse.ArgumentParser(description="Build the static GitHub Pages mirror.")
     parser.add_argument("--base-url", default="https://pablocirre.github.io", help="Public base URL for the mirror.")
+    parser.add_argument(
+        "--canonical-base-url",
+        default=SOURCE_BASE_URL,
+        help="Canonical base URL declared in SEO identity tags. Defaults to the primary pablocirre.es site.",
+    )
     parser.add_argument("--output", default=str(DEFAULT_OUTPUT), help="Output directory. Existing contents are replaced except .git.")
     parser.add_argument("--sitemap-index", default="sitemap_index.xml", help="Sitemap index path relative to the repo root.")
     parser.add_argument("--timeout", type=int, default=20, help="Per-page fetch timeout in seconds.")
