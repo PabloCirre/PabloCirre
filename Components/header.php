@@ -38,6 +38,10 @@ if ($uri_path !== '/' && substr($uri_path, -1) !== '/') {
 $canonical_url = $protocol . $host . $uri_path;
 
 require_once __DIR__ . '/config.php';
+
+$social_profiles = function_exists('pc_social_profiles') ? pc_social_profiles() : [];
+$social_profile_urls = function_exists('pc_social_profile_urls') ? pc_social_profile_urls() : [];
+$social_x_handle = function_exists('pc_social_x_handle') ? pc_social_x_handle() : '@PabloCirre';
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -46,9 +50,14 @@ require_once __DIR__ . '/config.php';
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="canonical" href="<?php echo htmlspecialchars($canonical_url); ?>" />
+    <meta name="author" content="Pablo Cirre">
+    <?php foreach ($social_profiles as $social_profile): ?>
+        <link rel="me" href="<?php echo htmlspecialchars((string) ($social_profile['url'] ?? ''), ENT_QUOTES, 'UTF-8'); ?>" title="<?php echo htmlspecialchars((string) ($social_profile['name'] ?? 'Social profile'), ENT_QUOTES, 'UTF-8'); ?>">
+    <?php endforeach; ?>
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Pablo Cirre" />
     <meta property="og:url" content="<?php echo htmlspecialchars($canonical_url); ?>" />
     <meta property="og:title"
         content="<?php echo isset($page_title) ? htmlspecialchars($page_title) : 'Pablo Cirre'; ?>" />
@@ -58,6 +67,8 @@ require_once __DIR__ . '/config.php';
 
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="<?php echo htmlspecialchars($social_x_handle, ENT_QUOTES, 'UTF-8'); ?>" />
+    <meta name="twitter:creator" content="<?php echo htmlspecialchars($social_x_handle, ENT_QUOTES, 'UTF-8'); ?>" />
     <meta name="twitter:url" content="<?php echo htmlspecialchars($canonical_url); ?>" />
     <meta name="twitter:title"
         content="<?php echo isset($page_title) ? htmlspecialchars($page_title) : 'Pablo Cirre'; ?>" />
@@ -75,7 +86,8 @@ require_once __DIR__ . '/config.php';
         "description": "<?php echo isset($page_description) ? htmlspecialchars($page_description) : 'Pablo Cirre - Big Data, Email Intelligence, Formación & Experiencias en Vídeo'; ?>",
         "author": {
             "@type": "Person",
-            "name": "Pablo Cirre"
+            "name": "Pablo Cirre",
+            "sameAs": <?php echo json_encode($social_profile_urls, JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE); ?>
         }
     }
     </script>
