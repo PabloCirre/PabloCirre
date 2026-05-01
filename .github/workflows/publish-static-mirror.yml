@@ -1,0 +1,60 @@
+name: Publish static GitHub Pages mirror
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  build-and-publish:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out source site
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Set up PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: "8.4"
+          coverage: none
+
+      - name: Build static mirror
+        run: |
+          python Tools/static_mirror/build_pages.py \
+            --base-url https://pablocirre.github.io \
+            --output "$RUNNER_TEMP/PabloCirre.github.io"
+
+      - name: Publish to PabloCirre.github.io
+        env:
+          PAGES_DEPLOY_TOKEN: ${{ secrets.PAGES_DEPLOY_TOKEN }}
+        run: |
+          if [ -z "$PAGES_DEPLOY_TOKEN" ]; then
+            echo "Missing PAGES_DEPLOY_TOKEN secret with write access to PabloCirre/PabloCirre.github.io" >&2
+            exit 1
+          fi
+
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+          git clone "https://x-access-token:${PAGES_DEPLOY_TOKEN}@github.com/PabloCirre/PabloCirre.github.io.git" "$RUNNER_TEMP/pages-repo"
+          find "$RUNNER_TEMP/pages-repo" -mindepth 1 -maxdepth 1 ! -name .git -exec rm -rf {} +
+          cp -a "$RUNNER_TEMP/PabloCirre.github.io/." "$RUNNER_TEMP/pages-repo/"
+
+          cd "$RUNNER_TEMP/pages-repo"
+          git add -A
+          if git diff --cached --quiet; then
+            echo "No static mirror changes to publish."
+            exit 0
+          fi
+          git commit -m "Publish static mirror"
+          git push origin HEAD:main
